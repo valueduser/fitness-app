@@ -1,41 +1,125 @@
 import React, { useState } from "react";
-import { ActivityForm } from "./ActivityForm";
 import { ActivityList } from "./ActivityList";
 import "../App.css";
 
 function AddWorkout() {
+  //TODO: populate this only in demo mode
   const [activities, setActivities] = useState([
     {
       name: "Lunges",
-      list: "workoutActivities"
+      list: "workoutActivities",
+      image: "not found",
+      duration: "6 minutes",
+      notes: "engage glutes",
+      reps: 3,
+      sets: 10,
+      equipment: "25 lb kettlebell",
+      weight: 25,
+      weightUnits: "lbs",
+      tags: [
+        "endurance",
+        "flexibility",
+        "conditioning",
+        "strength",
+        "antagonist",
+      ],
     },
     {
       name: "Goblet Squats",
-      list: "workoutActivities"
+      list: "workoutActivities",
+      image: "not found",
+      duration: "6 minutes",
+      notes: "engage glutes",
+      reps: 3,
+      sets: 10,
+      equipment: "25 lb kettlebell",
+      weight: 25,
+      weightUnits: "lbs",
+      tags: [
+        "endurance",
+        "flexibility",
+        "conditioning",
+        "strength",
+        "antagonist",
+      ],
     },
     {
       name: "Runner Lunges",
-      list: "workoutActivities"
+      list: "workoutActivities",
+      image: "not found",
+      duration: "6 minutes",
+      notes: "engage glutes",
+      reps: 3,
+      sets: 10,
+      equipment: "25 lb kettlebell",
+      weight: 25,
+      weightUnits: "lbs",
+      tags: [
+        "endurance",
+        "flexibility",
+        "conditioning",
+        "strength",
+        "antagonist",
+      ],
     },
     {
       name: "Pistol Squat",
-      list: "workoutActivities"
+      list: "workoutActivities",
+      image: "not found",
+      duration: "6 minutes",
+      notes: "engage glutes",
+      reps: 3,
+      sets: 10,
+      equipment: "25 lb kettlebell",
+      weight: 25,
+      weightUnits: "lbs",
+      tags: [
+        "endurance",
+        "flexibility",
+        "conditioning",
+        "strength",
+        "antagonist",
+      ],
     },
     {
       name: "Body weight nonsense",
-      list: "workoutActivities"
+      list: "workoutActivities",
+      image: "not found",
+      duration: "6 minutes",
+      notes: "engage glutes",
+      reps: 3,
+      sets: 10,
+      equipment: "25 lb kettlebell",
+      weight: 25,
+      weightUnits: "lbs",
+      tags: [
+        "endurance",
+        "flexibility",
+        "conditioning",
+        "strength",
+        "antagonist",
+      ],
     },
     {
       name: "Dangleboard 9000",
-      list: "availableActivities"
+      list: "availableActivities",
+      image: "not found",
+      duration: "6 minutes",
+      notes: "engage glutes",
+      reps: 3,
+      sets: 10,
+      equipment: "25 lb kettlebell",
+      weight: 25,
+      weightUnits: "lbs",
+      tags: [
+        "endurance",
+        "flexibility",
+        "conditioning",
+        "strength",
+        "antagonist",
+      ],
     },
   ]);
-
-  const addActivity = (name, list) => {
-    const newActivities = [...activities, { name, list }];
-    console.log(newActivities);
-    setActivities(newActivities);
-  };
 
   const handleEvent = (index) => {
     const newActivities = [...activities];
@@ -47,21 +131,36 @@ function AddWorkout() {
     setActivities(newActivities);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //TODO: populate the name, activities etc properties of the new workout and save
+    alert(e.target.value);
+  };
+
   return (
     <div>
       <h1>Add Workout!</h1>
+      <form onSubmit={handleSubmit}>
+        <label for="workout-name">Workout Name: </label>
+        <input
+          name="workout-name"
+          type="text"
+          className="workout-name-input"
+          value="workout name here pls"
+          onChange={(e) => alert(e.target.value)}
+        />
+      </form>
       <div className="activity-list">
-      <ActivityList
-      allItems={activities}
-      handleEvent={handleEvent}
-      listType={"workoutActivities"}
-      />
-      <ActivityForm addActivity={addActivity} />
-      <ActivityList
-      allItems={activities}
-      handleEvent={handleEvent}
-      listType={"availableActivities"}
-      />
+        <ActivityList
+          allItems={activities}
+          handleEvent={handleEvent}
+          listType={"workoutActivities"}
+        />
+        <ActivityList
+          allItems={activities}
+          handleEvent={handleEvent}
+          listType={"availableActivities"}
+        />
       </div>
     </div>
   );

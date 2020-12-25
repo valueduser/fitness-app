@@ -3,10 +3,22 @@ import { Activity } from "./Activity";
 
 export function ActivityList({ allItems, handleEvent, listType }) {
   let listItems = allItems.map((itemObj, index) => {
-    if(itemObj.list !== listType) {
+    if (itemObj.list !== listType) {
       return null;
     }
-    return <Activity activity={itemObj} key={index} index={index} handleEvent={handleEvent} />;
+    return (
+      <Activity
+        activity={itemObj}
+        key={index}
+        index={index}
+        handleEvent={handleEvent}
+      />
+    );
   });
-  return <ul>{listItems}</ul>
+  return (
+    <div>
+      <label>{listType==="workoutActivities" ? "Workout Activities" : "Available Activities"}</label>
+      <ul>{listItems}</ul>
+    </div>
+  );
 }

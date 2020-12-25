@@ -12,7 +12,9 @@ export function ActivityForm({ addActivity }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label for="activity-name">Activity Name: </label>
       <input
+        name="activity-name"
         type="text"
         className="input"
         value={value}

@@ -49,6 +49,7 @@ function Home() {
         {workouts.map((workout, index) => (
           <Workout
             index={index}
+            key={index}
             workout={workout}
             edit={editWorkout}
             remove={removeWorkout}
