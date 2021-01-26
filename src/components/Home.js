@@ -1,65 +1,62 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-function Workout({ workout, index, edit, remove }) {
+function Workout(props) {
   return (
     <div className="workout">
-      {workout.name}
+      {props.workout.name}
       <div>
-        <button onClick={() => edit(index)}>Edit</button>
-        <button onClick={() => remove(index)}>Delete</button>
+        <Link to={`/editWorkout/${props.workout.id}`}>
+          {/* todo: editWorkout page pass the workout and modify and return */}
+          <button>Edit</button>
+        </Link>
+        <button onClick={() => props.remove(props.workout)}>Delete</button>
+        <Link to={`/doWorkout/${props.workout.id}`}>
+          <button>Start</button>
+        </Link>
       </div>
     </div>
   );
 }
 
-function Home() {
-  const [workouts, setWorkouts] = useState([
-    {
-      name: "Monday Lifting",
-    },
-    {
-      name: "Body weight nonsense",
-    },
-    {
-      name: "Dangleboard 9000",
-    },
-  ]);
-
-  const addWorkout = (name) => {
-    const newWorkouts = [...workouts, { name }];
-    setWorkouts(newWorkouts);
-  };
-
-  const editWorkout = (index) => {
-    const newWorkouts = [...workouts];
-    // todo: edit
-    setWorkouts(newWorkouts);
-  };
-
-  const removeWorkout = (index) => {
-    const newWorkouts = [...workouts];
-    newWorkouts.splice(index, 1);
-    setWorkouts(newWorkouts);
-  };
-
+function Home(props) {
   return (
     <div>
       <h1>welcome to home!</h1>
+      {console.log(props.workouts)}
       <div className="workout-list">
-        {workouts.map((workout, index) => (
+        {props.workouts.map((workout, index) => (
           <Workout
             index={index}
             key={index}
             workout={workout}
-            edit={editWorkout}
-            remove={removeWorkout}
+            remove={props.removeWorkout}
           />
         ))}
-        <button onClick={() => addWorkout}>Add new</button>
+
+        <Link to="/addWorkout">
+          <button>New Workout</button>
+        </Link>
+
         {/* todo: nav when button clicked */}
+        <button onClick={props.updateWorkouts}>UpdateDispatch button</button>
       </div>
     </div>
   );
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    workouts: state.workouts,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeWorkout: (workout) =>
+      dispatch({ type: "workoutList/removeWorkout", payload: workout })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { ActivityList } from "./ActivityList";
+import { useParams } from "react-router-dom";
+import workouts from "../api/demoWorkouts.json";
+import { Link } from "react-router-dom";
 import "../App.css";
 
-function AddWorkout() {
+function DoWorkout(data) {
+  const { workoutId } = useParams();
+  const workout = workouts.find((w) => w.id === Number(workoutId));
+
   //TODO: populate this only in demo mode
   const [activities, setActivities] = useState([
     {
@@ -121,7 +126,49 @@ function AddWorkout() {
     },
   ]);
 
-  const [workoutName, setWorkoutName] = useState("");
+
+
+  const carouselReducer =( state, action ) => {
+    switch (action.type) {
+      case 'jump':
+        return {
+          ...state,
+          desired: action.desired,
+        };
+      case 'next':
+        return {
+          ...state,
+          desired: next(action.length, state.active),
+        };
+      case 'prev':
+        return {
+          ...state,
+          desired: previous(action.length, state.active),
+        };
+      case 'done':
+        return {
+          ...state,
+          offset: NaN,
+          active: state.desired,
+        };
+      case 'drag':
+        return {
+          ...state,
+          offset: action.offset,
+        };
+      default:
+        return state;
+    }
+  }
+
+
+  const previous = (length, current) => {
+    return (current - 1 + length) % length;
+  }
+
+  const next = (length, current) => {
+    return (current + 1) % length;
+  }
 
   const handleEvent = (index) => {
     const newActivities = [...activities];
@@ -133,39 +180,14 @@ function AddWorkout() {
     setActivities(newActivities);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    //TODO: populate the name, activities etc properties of the new workout and save
-    alert(e.target.value);
-  };
-
   return (
     <div>
-      <h1>Add Workout!</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="workout-name">Workout Name: </label>
-        <input
-          name="workout-name"
-          type="text"
-          className="workout-name-input"
-          value={workoutName}
-          onChange={(e) => setWorkoutName(e.target.value)}
-        />
-      </form>
-      <div className="activity-list">
-        <ActivityList
-          allItems={activities}
-          handleEvent={handleEvent}
-          listType={"workoutActivities"}
-        />
-        <ActivityList
-          allItems={activities}
-          handleEvent={handleEvent}
-          listType={"availableActivities"}
-        />
-      </div>
+      <h1>Do {workout.name}!</h1>
+      <Link to={`/doActivity/${workout.id}`}>
+          <button>Start</button>
+        </Link>
     </div>
   );
 }
 
-export default AddWorkout;
+export default DoWorkout;

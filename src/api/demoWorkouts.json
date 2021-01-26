@@ -1,0 +1,140 @@
+[
+  {
+    "id": 0,
+    "name": "Monday Workout",
+    "activities": [
+      {
+        "name": "Lunges",
+        "list": "workoutActivities",
+        "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+        "duration": 25,
+        "durationUnits": "seconds",
+        "reps": "2",
+        "sets": "1",
+        "equipment": ["25 lb kettlebell"],
+        "weight": "",
+        "tags": ["endurance", "conditioning", "strength"]
+      },
+      {
+        "name": "Goblet Squats",
+        "list": "workoutActivities",
+        "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+        "duration": 25,
+        "durationUnits": "seconds",
+        "reps": "2",
+        "sets": "1",
+        "equipment": ["25 lb kettlebell"],
+        "weight": "",
+        "tags": ["conditioning", "strength"]
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Tuesday Workout",
+    "activities": [
+      {
+        "name": "Runner Lunges",
+        "list": "workoutActivities",
+        "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+        "duration": 25,
+        "durationUnits": "seconds",
+        "reps": "2",
+        "sets": "1",
+        "equipment": [],
+        "weight": "",
+        "tags": ["endurance", "conditioning", "strength"]
+      },
+      {
+        "name": "Pistol Squat",
+        "list": "workoutActivities",
+        "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+        "duration": 25,
+        "durationUnits": "seconds",
+        "reps": "2",
+        "sets": "1",
+        "equipment": ["25 lb kettlebell"],
+        "weight": "",
+        "tags": ["conditioning", "strength"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Dangleboard 9000",
+    "activities": [
+      {
+        "name": "Dangleboard 9000",
+        "list": "workoutActivities",
+        "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+        "duration": 25,
+        "durationUnits": "seconds",
+        "reps": "2",
+        "sets": "1",
+        "equipment": ["Beast maker"],
+        "weight": "",
+        "tags": [
+          "endurance",
+          "flexibility",
+          "conditioning",
+          "strength",
+          "antagonist"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Leg Day",
+    "activities": [
+      {
+        "name": "Lunges",
+        "list": "workoutActivities",
+        "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+        "duration": 25,
+        "durationUnits": "seconds",
+        "reps": "2",
+        "sets": "1",
+        "equipment": ["25 lb kettlebell"],
+        "weight": "",
+        "tags": ["endurance", "conditioning", "strength"]
+      },
+      {
+        "name": "Goblet Squats",
+        "list": "workoutActivities",
+        "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+        "duration": 25,
+        "durationUnits": "seconds",
+        "reps": "2",
+        "sets": "1",
+        "equipment": ["25 lb kettlebell"],
+        "weight": "",
+        "tags": ["conditioning", "strength"]
+      },
+      {
+        "name": "Runner Lunges",
+        "list": "workoutActivities",
+        "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+        "duration": 25,
+        "durationUnits": "seconds",
+        "reps": "2",
+        "sets": "1",
+        "equipment": [],
+        "weight": "",
+        "tags": ["endurance", "conditioning", "strength"]
+      },
+      {
+        "name": "Pistol Squat",
+        "list": "workoutActivities",
+        "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+        "duration": 25,
+        "durationUnits": "seconds",
+        "reps": "2",
+        "sets": "1",
+        "equipment": ["25 lb kettlebell"],
+        "weight": "",
+        "tags": ["conditioning", "strength"]
+      }
+    ]
+  }
+]

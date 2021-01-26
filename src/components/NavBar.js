@@ -6,7 +6,6 @@ function NavBar() {
     <ul>
       <li><Link to="/">Home</Link></li>
       <li><Link to="/settings">Settings</Link></li>
-      <li><Link to="/addWorkout">AddWorkout</Link></li>
       <li><Link to="/addActivity">AddActivity</Link></li>
     </ul>
   );
