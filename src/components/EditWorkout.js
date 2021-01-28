@@ -2,12 +2,11 @@ import React from "react";
 import { ActivityList } from "./ActivityList";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
-import workouts from "../api/demoWorkouts.json";
 import "../App.css";
 
 function EditWorkout(props) {
   const { workoutId } = useParams();
-  const workout = workouts.find((w) => w.id === Number(workoutId));
+  const workout = props.workouts.find((w) => w.id === Number(workoutId));
 
   const handleChange = (e) => {
     console.warn(e.target.value);
@@ -30,32 +29,16 @@ function EditWorkout(props) {
           type="text"
           className="workout-name-input"
           value={props.workoutName}
-          // onChange={handleChange}
-          // onChange={(e) => setWorkoutName(e.target.value)}
+          onBlur={handleChange}
         />
-        <div>
-          <label>
-            With hooks
-            <input
-              type="checkbox"
-              name="hooks"
-              checked={true}
-              // onChange={handleChange}
-            />
-          </label>
-        </div>
-
-
-        {/* //TODO: MAYBE MAKE THESE CHECKBOXES AND RENDER THEM THAT WAY */}
-
 
         <div className="activity-list">
           <ActivityList
-            allItems={workout.activities}
+            allItems={linkWorkoutActivities(workout, props.activities)}
             listType={"workoutActivities"}
           />
           <ActivityList
-            allItems={workout.activities} //TODO: get all activities
+            allItems={props.activities}
             listType={"availableActivities"}
           />
         </div>
@@ -70,8 +53,25 @@ function EditWorkout(props) {
 const mapStateToProps = (state) => {
   return {
     workouts: state.workouts,
+    activities: state.activities,
   };
 };
+
+const linkWorkoutActivities = (workout, activities) => {
+  const workoutActivities = [];
+
+  workout.activities.forEach((activity) => 
+    workoutActivities.push(activities.find((act) => act.id === activity))
+  );
+
+  return workoutActivities;
+  //workArr.forEach((workout) =>
+  // workout.activities.forEach((activity) =>
+  // console.log(actArr.find((act) => act.id === activity))
+  // )
+  // );
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     updateWorkout: (workout) =>

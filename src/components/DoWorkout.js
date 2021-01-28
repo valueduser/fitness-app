@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import workouts from "../api/demoWorkouts.json";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "../App.css";
 
-function DoWorkout(data) {
+function DoWorkout(props) {
   const { workoutId } = useParams();
-  const workout = workouts.find((w) => w.id === Number(workoutId));
+  const workout = props.workouts.find((w) => w.id === Number(workoutId));
 
   //TODO: populate this only in demo mode
   const [activities, setActivities] = useState([
@@ -190,4 +190,12 @@ function DoWorkout(data) {
   );
 }
 
-export default DoWorkout;
+
+const mapStateToProps = (state) => {
+  return {
+    workouts: state.workouts,
+  };
+};
+
+export default connect(mapStateToProps)(DoWorkout);
+

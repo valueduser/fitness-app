@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-export function Activity({ activity, index }) {
+export function Activity({ activity, listType, index }) {
 
   const toggleActivity = (activity) => {
     console.log(activity);
@@ -18,7 +18,9 @@ export function Activity({ activity, index }) {
     <div className="activity">
       {activity.name}
       <div>
-        <button onClick={() => toggleActivity(activity)}>{activity.list==="workoutActivities" ? "-" : "+"}</button>
+        <button onClick={() => toggleActivity(activity)}>
+          {listType === "workoutActivities" ? "-" : "+"}
+        </button>
       </div>
     </div>
   );

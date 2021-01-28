@@ -154,7 +154,7 @@ function AddWorkout() {
       </form>
       <div className="activity-list">
         <ActivityList
-          allItems={activities}
+          allItems={null}
           handleEvent={handleEvent}
           listType={"workoutActivities"}
         />

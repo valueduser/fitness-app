@@ -1,7 +1,7 @@
 [
   {
+    "id": 0,
     "name": "Lunges",
-    "list": "workoutActivities",
     "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
     "duration": 25,
     "durationUnits": "seconds",
@@ -9,17 +9,11 @@
     "sets": "1",
     "equipment": ["25 lb kettlebell"],
     "weight": "",
-    "tags": [
-      "endurance",
-      "flexibility",
-      "conditioning",
-      "strength",
-      "antagonist"
-    ]
+    "tags": ["endurance", "conditioning", "strength"]
   },
   {
+    "id": 1,
     "name": "Goblet Squats",
-    "list": "workoutActivities",
     "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
     "duration": 25,
     "durationUnits": "seconds",
@@ -27,35 +21,23 @@
     "sets": "1",
     "equipment": ["25 lb kettlebell"],
     "weight": "",
-    "tags": [
-      "endurance",
-      "flexibility",
-      "conditioning",
-      "strength",
-      "antagonist"
-    ]
+    "tags": ["conditioning", "strength"]
   },
   {
+    "id": 2,
     "name": "Runner Lunges",
-    "list": "workoutActivities",
     "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
     "duration": 25,
     "durationUnits": "seconds",
     "reps": "2",
     "sets": "1",
-    "equipment": ["25 lb kettlebell"],
+    "equipment": [],
     "weight": "",
-    "tags": [
-      "endurance",
-      "flexibility",
-      "conditioning",
-      "strength",
-      "antagonist"
-    ]
+    "tags": ["endurance", "conditioning", "strength"]
   },
   {
+    "id": 3,
     "name": "Pistol Squat",
-    "list": "workoutActivities",
     "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
     "duration": 25,
     "durationUnits": "seconds",
@@ -63,41 +45,17 @@
     "sets": "1",
     "equipment": ["25 lb kettlebell"],
     "weight": "",
-    "tags": [
-      "endurance",
-      "flexibility",
-      "conditioning",
-      "strength",
-      "antagonist"
-    ]
+    "tags": ["conditioning", "strength"]
   },
   {
-    "name": "Body weight nonsense",
-    "list": "workoutActivities",
-    "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
-    "duration": 25,
-    "durationUnits": "seconds",
-    "reps": "2",
-    "sets": "1",
-    "equipment": ["25 lb kettlebell"],
-    "weight": "",
-    "tags": [
-      "endurance",
-      "flexibility",
-      "conditioning",
-      "strength",
-      "antagonist"
-    ]
-  },
-  {
+    "id": 4,
     "name": "Dangleboard 9000",
-    "list": "availableActivities",
     "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
     "duration": 25,
     "durationUnits": "seconds",
     "reps": "2",
     "sets": "1",
-    "equipment": ["25 lb kettlebell"],
+    "equipment": ["Beast maker"],
     "weight": "",
     "tags": [
       "endurance",

@@ -1,7 +1,4 @@
-import demoWorkouts from "../../api/demoWorkouts.json";
-// import demoWorkouts from "../api/demoWorkouts.json";
-
-const initialState = { workouts: demoWorkouts };
+const initialState = { };
 
 function nextWorkoutId(workouts) {
   const id = workouts.reduce((id, workout) => Math.max(workout.id, id), -1);
