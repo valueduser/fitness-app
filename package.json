@@ -5,6 +5,8 @@
   "dependencies": {
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.2",
+    "@sentry/react": "^6.0.3",
+    "@sentry/tracing": "^6.0.3",
     "@svgr/webpack": "5.4.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
