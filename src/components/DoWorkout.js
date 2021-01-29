@@ -66,7 +66,7 @@ function DoWorkout(props) {
         TODO: Add some information about how long the workout is expected to
         take, equipment needed, list of activities that are part of this workout
       </p>
-      <Link to={`/doActivity/${workout.activities[0]}`}>
+      <Link to={`/doActivity/${workout.id}/${workout.activities[0]}`}>
         <button>Start</button>
       </Link>
     </div>
