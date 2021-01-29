@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name": "Lunges",
-    "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+    "image": "https://media.giphy.com/media/X8yODDTOQoSUByIpgl/giphy.gif",
     "duration": 25,
     "durationUnits": "seconds",
     "reps": "2",
@@ -14,7 +14,7 @@
   {
     "id": 1,
     "name": "Goblet Squats",
-    "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+    "image": "https://media.giphy.com/media/322W9dk1XC1esd8uyd/giphy.gif",
     "duration": 25,
     "durationUnits": "seconds",
     "reps": "2",
@@ -38,7 +38,7 @@
   {
     "id": 3,
     "name": "Pistol Squat",
-    "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+    "image": "https://media.giphy.com/media/xUPGcJGpd7ALzeLUOY/giphy.gif",
     "duration": 25,
     "durationUnits": "seconds",
     "reps": "2",
@@ -50,19 +50,148 @@
   {
     "id": 4,
     "name": "Dangleboard 9000",
-    "image": "https://www.wpoven.com/blog/wp-content/uploads/2018/10/error-404-not-found-1.png",
+    "image": "https://i.imgur.com/u8chSQx.gif",
     "duration": 25,
     "durationUnits": "seconds",
     "reps": "2",
     "sets": "1",
-    "equipment": ["Beast maker"],
+    "equipment": ["Hangboard"],
     "weight": "",
     "tags": [
-      "endurance",
-      "flexibility",
-      "conditioning",
-      "strength",
-      "antagonist"
+      "hangboard"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Hip Abduction",
+    "image": "https://j.gifs.com/KzMeBg.gif",
+    "duration": 1,
+    "durationUnits": "seconds",
+    "reps": "10",
+    "sets": "1",
+    "equipment": [],
+    "weight": "",
+    "notes": "While lying on your side, slowly raise your top leg to the side. Keep your knee straight and maintain your toes pointed forward the entire time. Keep your leg in-line with your body. Do not let your pelvis roll.",
+    "tags": ["conditioning", "hips"]
+  },
+  {
+    "id": 6,
+    "name": "Clam Shells",
+    "image": "https://43nnuk1fz4a72826eo14gwfb-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/0906_ItBandSyndrome_Blog_Clamshell_Inline_GIF.gif",
+    "duration": 1,
+    "durationUnits": "seconds",
+    "reps": "10",
+    "sets": "1",
+    "equipment": [],
+    "weight": "",
+    "notes": "While lying on your side with your knees bent, draw up the top knee while keeping contact of your feet together. Do not let your pelvis roll back during the lifting movement.",
+    "tags": ["conditioning", "hips"]
+  },
+  {
+    "id": 7,
+    "name": "Reverse Clam Shells",
+    "image": "https://www.vissco.com/wp-content/uploads/animation/sub/reverse-clamshell.gif",
+    "duration": 1,
+    "durationUnits": "seconds",
+    "reps": "10",
+    "sets": "1",
+    "equipment": [],
+    "weight": "",
+    "notes": "While lying on your side with your knees bent, raise your top foot towards the ceiling while keeping contact of your knees together. Then, lower back down to the original position",
+    "tags": ["conditioning", "hips"]
+  },
+  {
+    "id": 8,
+    "name": "Pigeon Pose",
+    "image": "https://imagesvc.meredithcorp.io/v3/mm/gif?q=85&c=sc&poi=face&w=1000&h=667&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F12%2F2019%2F12%2Fpigeon-1.gif",
+    "duration": 30,
+    "durationUnits": "seconds",
+    "reps": "2",
+    "sets": "1",
+    "equipment": [],
+    "weight": "",
+    "notes": "Start in a high plank position with your hands directly under your shoulders. Then, bring right knee forward toward right wrist. Lay shin flat on the floor, parallel to chest. Keep left leg extended. Lean forward at the waist to deepen the stretch.",
+    "tags": ["flexibility", "hips"]
+  },
+  {
+    "id": 9,
+    "name": "Lateral Band Walk",
+    "image": "https://via.placeholder.com/300/09f/fff.gif?text=Lateral+Band+Walk",
+    "duration": null,
+    "durationUnits": null,
+    "reps": "15",
+    "sets": "1",
+    "equipment": ["Resistance Band"],
+    "weight": "",
+    "notes": "Loop a small resistance band around legs slightly above ankles. Stand tall with feet about hip-width apart. Soften knees and take a small step to the side with one foot. Then, slowly follow with opposite foot so feet are hip-width apart again. Avoid leaning to the side as you step and prevent lead knee from collapsing inward; knee should stay over ankle the entire time.",
+    "tags": ["conditioning", "strength", "hips"]
+  },
+  {
+    "id": 10,
+    "name": "Glute Bridge",
+    "image": "https://via.placeholder.com/300/09f/fff.gif?text=Glute+Bridge",
+    "duration": null,
+    "durationUnits": null,
+    "reps": "10",
+    "sets": "3",
+    "equipment": [],
+    "weight": "",
+    "notes": "Lie on your back with knees bent and feet on the floor, hip-width apart. Engage abs and push into the floor with heels to lift hips so knees, hips and shoulders align. Squeeze glutes to the top of the movement, then slowly lower hips back down to the floor.",
+    "tags": ["conditioning", "hips"]
+  },
+  {
+    "id": 11,
+    "name": "Spiderman Lunge",
+    "image": "https://via.placeholder.com/300/09f/fff.gif?text=Spiderman+Lunge",
+    "duration": null,
+    "durationUnits": null,
+    "reps": "5",
+    "sets": "3",
+    "equipment": [],
+    "weight": "",
+    "notes": "Start in a high-plank position with hands directly under shoulders. Bend right knee to step right foot forward, just outside right hand. Keep left leg extended and abs tight. Step right foot back to plank and pause.",
+    "tags": ["conditioning", "strength", "hips"]
+  },
+  {
+    "id": 12,
+    "name": "Minimum Edge Hangs",
+    "image": "https://via.placeholder.com/300/09f/fff.gif?text=Minimum+Edge+Hangs",
+    "duration": 12,
+    "durationUnits": "seconds",
+    "reps": "5",
+    "sets": "2",
+    "restBetweenReps": 3,
+    "restBetweenRepsUnits": "minutes",
+    "restBetweenSets": 5,
+    "restBetweenSetsUnits": "minutes",
+    "grip": ["half-crimp", "open-hand"],
+    "edge": "",
+    "notes": "Find the smallest edge you can hang on for 15 seconds. Should be a 9/10 exertion-wise. Maintain tension throughout your shoulders and upper torso by engaging your scapular stabilizers. Take a deep breath at the start of each hang. Do not relax your shoulders and allow them to elevate into an exaggerated shrugged position.",
+    "equipment": ["Hangboard"],
+    "weight": "",
+    "tags": [
+      "hangboard", "strength"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Max Hangs",
+    "image": "https://via.placeholder.com/300/09f/fff.gif?text=Max+Hangs",
+    "duration": 10,
+    "durationUnits": "seconds",
+    "reps": "5",
+    "sets": "2",
+    "restBetweenReps": 3,
+    "restBetweenRepsUnits": "minutes",
+    "restBetweenSets": 5,
+    "restBetweenSetsUnits": "minutes",
+    "grip": ["half-crimp", "open-hand"],
+    "edge": "",
+    "notes": "Find a larger, more comfortable edge (14mm - 20mm or slightly less than a finger pad). Something you can hold at most for 13 seconds. Should be a 9/10 exertion-wise. Maintain tension throughout your shoulders and upper torso by engaging your scapular stabilizers. Take a deep breath at the start of each hang. Do not relax your shoulders and allow them to elevate into an exaggerated shrugged position.",
+    "equipment": ["Hangboard"],
+    "weight": "",
+    "tags": [
+      "hangboard", "strength"
     ]
   }
 ]

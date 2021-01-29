@@ -1,7 +1,6 @@
-import React from 'react'; 
+import React from "react";
 
 export function Activity({ activity, listType, index }) {
-
   const toggleActivity = (activity) => {
     console.log(activity);
     // const newActivities = workout.activities[index];
@@ -12,7 +11,6 @@ export function Activity({ activity, listType, index }) {
     }
     // setActivities(newActivities);
   };
-
 
   return (
     <div className="activity">

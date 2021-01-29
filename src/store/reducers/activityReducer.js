@@ -1,4 +1,4 @@
-const initialState = { };
+const initialState = {};
 
 const activityReducer = (state = initialState, action) => {
   switch (action.type) {

@@ -3,16 +3,21 @@ import { Activity } from "./Activity";
 
 export function ActivityList({ allItems, listType }) {
   let listItems;
-  if(allItems?.length > 1){
+  if (allItems?.length > 1) {
     listItems = allItems.map((itemObj, index) => {
       // if (!!itemObj.list && itemObj.list !== listType) {
       //   return null;
       // }
-      return <Activity activity={itemObj} list={listType} key={index} index={index} />;
+      return (
+        <Activity
+          activity={itemObj}
+          list={listType}
+          key={index}
+          index={index}
+        />
+      );
     });
   }
-
-  
 
   return (
     <div>

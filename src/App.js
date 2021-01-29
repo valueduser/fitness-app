@@ -1,6 +1,6 @@
 import React from "react";
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 import Home from "./components/Home";
 import Settings from "./components/Settings";
 import { Route, Link, Router } from "react-router-dom";
@@ -14,14 +14,14 @@ import DoActivity from "./components/DoActivity";
 function App() {
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar />
       <Route exact path="/" component={Home} />
       <Route exact path="/settings" component={Settings} />
       <Route exact path="/addWorkout" component={AddWorkout} />
       <Route exact path="/addActivity" component={AddActivity} />
       <Route path="/editWorkout/:workoutId?" component={EditWorkout} />
       <Route path="/doWorkout/:workoutId?" component={DoWorkout} />
-      <Route path="/doActivity/:workoutId?" component={DoActivity} />
+      <Route path="/doActivity/:activityId?" component={DoActivity} />
     </div>
   );
 }

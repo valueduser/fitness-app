@@ -38,7 +38,7 @@ function EditWorkout(props) {
             listType={"workoutActivities"}
           />
           <ActivityList
-            allItems={props.activities}
+            allItems={filterActivities(workout, props.activities)}
             listType={"availableActivities"}
           />
         </div>
@@ -50,26 +50,31 @@ function EditWorkout(props) {
   );
 }
 
+const linkWorkoutActivities = (workout, allActivities) => {
+  const workoutActivities = [];
+
+  workout.activities.forEach((activity) =>
+    workoutActivities.push(allActivities.find((act) => act.id === activity))
+  );
+
+  return workoutActivities;
+};
+
+const filterActivities = (workout, allActivities) => {
+  const workoutActivities = linkWorkoutActivities(workout, allActivities);
+
+  const unassignedActivities = allActivities.filter(
+    (e) => !workoutActivities.includes(e)
+  );
+
+  return unassignedActivities;
+};
+
 const mapStateToProps = (state) => {
   return {
     workouts: state.workouts,
     activities: state.activities,
   };
-};
-
-const linkWorkoutActivities = (workout, activities) => {
-  const workoutActivities = [];
-
-  workout.activities.forEach((activity) => 
-    workoutActivities.push(activities.find((act) => act.id === activity))
-  );
-
-  return workoutActivities;
-  //workArr.forEach((workout) =>
-  // workout.activities.forEach((activity) =>
-  // console.log(actArr.find((act) => act.id === activity))
-  // )
-  // );
 };
 
 const mapDispatchToProps = (dispatch) => {
