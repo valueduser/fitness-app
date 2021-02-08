@@ -2,11 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function NavBar() {
-  return(
+  return (
     <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/settings">Settings</Link></li>
-      <li><Link to="/addActivity">AddActivity</Link></li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/settings">Settings</Link>
+      </li>
+      <li>
+        <Link to="/addActivity">AddActivity</Link>
+      </li>
     </ul>
   );
 }

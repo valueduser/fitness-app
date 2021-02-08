@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Timer from "./Timer";
 
 function DoActivity(props) {
   const { workoutId, activityId } = useParams();
@@ -25,6 +26,7 @@ function DoActivity(props) {
       <div>
         <h4>{activity.name}</h4>
         <img src={activity.image} alt={activity.name}></img>
+        <Timer time={activity.duration}></Timer>
         <h4>Duration: {activity.duration}</h4>
         <h4>Reps: {activity.reps}</h4>
         <h4>Sets: {activity.sets}</h4>
