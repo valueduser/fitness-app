@@ -13,7 +13,7 @@ function DoActivity(props) {
   if (activityIndex < 0) {
     return (
       <div>
-        <h4>🎉  Workout Completed 🎉</h4>
+        <h4>🎉 Workout Completed 🎉</h4>
         <Link to="/">
           <button>Home</button>
         </Link>
@@ -26,7 +26,7 @@ function DoActivity(props) {
       <div>
         <h4>{activity.name}</h4>
         <img src={activity.image} alt={activity.name}></img>
-        <Timer time={activity.duration}></Timer>
+        <Timer id={activity.id} time={activity.duration}></Timer>
         <h4>Duration: {activity.duration}</h4>
         <h4>Reps: {activity.reps}</h4>
         <h4>Sets: {activity.sets}</h4>

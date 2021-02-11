@@ -11,7 +11,7 @@ export function ActivityList({ allItems, listType }) {
       return (
         <Activity
           activity={itemObj}
-          list={listType}
+          listType={listType}
           key={index}
           index={index}
         />
