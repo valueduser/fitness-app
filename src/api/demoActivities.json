@@ -65,7 +65,7 @@
     "id": 5,
     "name": "Hip Abduction",
     "image": "https://j.gifs.com/KzMeBg.gif",
-    "duration": 1,
+    "duration": 10,
     "durationUnits": "seconds",
     "reps": "10",
     "sets": "1",
@@ -78,7 +78,7 @@
     "id": 6,
     "name": "Clam Shells",
     "image": "https://43nnuk1fz4a72826eo14gwfb-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/0906_ItBandSyndrome_Blog_Clamshell_Inline_GIF.gif",
-    "duration": 1,
+    "duration": 10,
     "durationUnits": "seconds",
     "reps": "10",
     "sets": "1",
@@ -91,7 +91,7 @@
     "id": 7,
     "name": "Reverse Clam Shells",
     "image": "https://www.vissco.com/wp-content/uploads/animation/sub/reverse-clamshell.gif",
-    "duration": 1,
+    "duration": 10,
     "durationUnits": "seconds",
     "reps": "10",
     "sets": "1",
@@ -193,5 +193,38 @@
     "tags": [
       "hangboard", "strength"
     ]
+  },
+  {
+    "id": 14,
+    "name": "Heel drops",
+    "image": "https://thumbs.gfycat.com/AdorableFlippantArcherfish-max-1mb.gif",
+    "reps": "20",
+    "sets": "3",
+    "notes": "Stand on a step with one foot and extend the opposite foot in front of you. Slowly squat down as though you are going to step forward. Return to the starting position. Keep your pelvis square throughout the movement.",
+    "equipment": ["25 lb kettlebell"],
+    "weight": "",
+    "tags": ["endurance", "conditioning", "strength"]
+  },
+  {
+    "id": 15,
+    "name": "Side leg abduction",
+    "image": "https://thumbs.gfycat.com/AnguishedSimpleGerenuk-max-1mb.gif",
+    "reps": "10",
+    "sets": "3",
+    "notes": "Lie on your side with your affected leg on top. Straighten your top leg and draw your toes toward you as if they’re trying to touch the front of your leg. Do this as you press out through your heel. Engage your abdominals, stack your hips, and keep your bottom leg slightly bent for balance. Slowly lift your top leg up and slightly back. Return to the starting position.",
+    "equipment": ["25 lb kettlebell"],
+    "weight": "",
+    "tags": ["endurance", "conditioning", "strength"]
+  },
+  {
+    "id": 16,
+    "name": "Hip hikes",
+    "image": "https://thumbs.gfycat.com/PerfectAcademicBarebirdbat-max-1mb.gif",
+    "reps": "15",
+    "sets": "3",
+    "notes": "Stand sideways on a step so that your left leg hangs off the edge. Keep your hips and shoulders squared forward. Keep your right leg straight as you lift your left hip up. Then drop the left leg back down again. Focus on pulling from your hip and waist rather than lifting your leg with your knee or from your foot.",
+    "equipment": ["25 lb kettlebell"],
+    "weight": "",
+    "tags": ["endurance", "conditioning", "strength"]
   }
 ]

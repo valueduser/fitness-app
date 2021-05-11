@@ -21,15 +21,30 @@ function DoActivity(props) {
     );
   }
 
+  function RenderTimerOrCounter(props)
+  {
+    if(!!props.activity.duration) 
+    {
+      return <div>
+        <Timer id={props.activity.id} time={props.activity.duration}></Timer>
+        <h4>Duration: {activity.duration}</h4>
+      </div>;
+    } else 
+    {
+      //TODO: make a tap-able counter for sets/reps
+      return <div>Place holder for tap-able counter
+        <h4>Reps: {activity.reps}</h4>
+        <h4>Sets: {activity.sets}</h4>
+      </div>
+    }
+  }
+
   return (
     <div>
       <div>
         <h4>{activity.name}</h4>
         <img src={activity.image} alt={activity.name}></img>
-        <Timer id={activity.id} time={activity.duration}></Timer>
-        <h4>Duration: {activity.duration}</h4>
-        <h4>Reps: {activity.reps}</h4>
-        <h4>Sets: {activity.sets}</h4>
+        <RenderTimerOrCounter activity={activity}></RenderTimerOrCounter>
         <h4>Notes: {activity.notes}</h4>
       </div>
       <Link

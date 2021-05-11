@@ -18,6 +18,10 @@ function EditWorkout(props) {
     console.log(e);
   };
 
+
+  //TODO: edit the ordering of workout items
+  //TODO: add rest activity type
+
   return (
     <div>
       <h1>Edit Workout!</h1>

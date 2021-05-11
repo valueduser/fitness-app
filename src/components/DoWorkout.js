@@ -62,9 +62,13 @@ function DoWorkout(props) {
   return (
     <div>
       <h1>Do {workout.name}!</h1>
-      <p>
-        TODO: Add some information about how long the workout is expected to
-        take, equipment needed, list of activities that are part of this workout
+      <p id="workoutNotes">
+        <span id="workoutNoteLabel">notes: </span>
+        {!!workout.notes ? workout.notes : "none"}
+      </p>
+      <p id="workoutEquipment">
+        <span id="workoutEquipmentLabel">equipment needed: </span>
+        {!!workout.equipment ? workout.equipment : "none"}
       </p>
       <Link to={`/doActivity/${workout.id}/${workout.activities[0]}`}>
         <button>Start</button>
@@ -72,21 +76,6 @@ function DoWorkout(props) {
     </div>
   );
 }
-
-// var $scope = {};
-// $scope.selectedEmployees = ["1001", "1002"];
-// $scope.selectedTasks = ["Task1", "Task2"];
-// var newArray = [];
-// for (var i = 0; i < $scope.selectedEmployees.length; i++) {
-//   for (var j = 0; j < $scope.selectedTasks.length; j++) {
-//     newArray.push({
-//       empId: $scope.selectedEmployees[i],
-//       task: $scope.selectedTasks[j],
-//     });
-//   }
-// }
-
-// console.log(newArray);
 
 const mapStateToProps = (state) => {
   return {
