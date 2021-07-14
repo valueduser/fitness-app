@@ -8,7 +8,7 @@ function Workout(props) {
       {props.workout.name}
       <div>
         <Link to={`/editWorkout/${props.workout.id}`}>
-          {/* todo: editWorkout page pass the workout and modify and return */}
+          {/* TODO: editWorkout page pass the workout and modify and return */}
           <button>Edit</button>
         </Link>
         <button onClick={() => props.remove(props.workout)}>Delete</button>
@@ -37,9 +37,6 @@ function Home(props) {
         <Link to="/addWorkout">
           <button>New Workout</button>
         </Link>
-
-        {/* todo: nav when button clicked */}
-        <button onClick={props.updateWorkouts}>UpdateDispatch button</button>
       </div>
     </div>
   );

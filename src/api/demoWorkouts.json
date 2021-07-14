@@ -3,8 +3,7 @@
     "id": 0,
     "name": "Hip Mobility & Strengthening",
     "activities": [0, 3, 5, 6, 7, 8, 9, 10, 11],
-    "notes": "This is a good workout for improving hip mobility, flexibility and strength.",
-    "equipment": "Resistance band"
+    "notes": "This is a good workout for improving hip mobility, flexibility and strength."
   },
   {
     "id": 1,
@@ -27,7 +26,12 @@
     "id": 4,
     "name": "IT Band Rehab",
     "activities": [14, 15, 16],
-    "notes": "not again",
-    "equipment": "Resistance band"
+    "notes": "not again"
+  }, 
+  {
+    "id": 5,
+    "name": "Empty workout",
+    "activities": [],
+    "notes": ""
   }
 ]

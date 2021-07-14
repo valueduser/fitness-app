@@ -31,17 +31,17 @@ export function ActivityForm({ addActivity }) {
         onChange={(e) => setValue(e.target.value)}
       />
 
-      {/* todo: some kind of indicator that reps & duration are an OR choice.  */}
+      {/* TODO: some kind of indicator that reps & duration are an OR choice.  */}
        <input name="reps" type="number" ref={register({ min: 1 })} placeholder="reps" />
 
       <input name="duration" ref={register} placeholder="duration" />
-      {/* todo: is there a need for anything other than seconds? */}
+      {/* TODO: is there a need for anything other than seconds? */}
       <select name="duration-units" ref={register}>
         <option value="seconds">seconds</option>
         <option value="minutes">minutes</option>
       </select>
 
-      {/* todo: this needs some special validation logic */}
+      {/* TODO: this needs some special validation logic */}
       <input name="image" ref={register} type="file" accept="image/png, image/jpeg" placeholder="image upload will go here someday" />
 
       <input type="submit" />

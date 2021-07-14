@@ -43,8 +43,8 @@ const workoutListReducer = (state = initialState, action) => {
     // [
     //   ...state.workouts,
     //   {
-    //     id: action.payload, //.id TODO,
-    //     name: action.payload, //.name TODO,
+    //     id: action.payload, //.id TODO:,
+    //     name: action.payload, //.name TODO:,
     //     activities: action.payload, //.activities
     //   },
     // ],
