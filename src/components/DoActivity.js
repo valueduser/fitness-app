@@ -45,6 +45,7 @@ function DoActivity(props) {
         <h4>{activity.name}</h4>
         <img src={activity.image} alt={activity.name}></img>
         <RenderTimerOrCounter activity={activity}></RenderTimerOrCounter>
+        <h4>Equipment: {activity.equipment.length > 0 ? activity.equipment : "none"}</h4>
         <h4>Notes: {activity.notes}</h4>
       </div>
       <Link

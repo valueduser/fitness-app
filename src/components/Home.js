@@ -16,6 +16,7 @@ function Workout(props) {
           <button>Start</button>
         </Link>
       </div>
+      <br/>
     </div>
   );
 }

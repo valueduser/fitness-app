@@ -47,7 +47,6 @@ function DoWorkout(props) {
       </p>
       <p id="workoutEquipment">
         <span id="workoutEquipmentLabel">Equipment needed: </span>
-        {/* {!!workout.equipment ? workout.equipment : "none"} */}
         { compileWorkoutEquipment(workout.activities).join(', ') }
       </p>
       <Link to={`/doActivity/${workout.id}/${workout.activities[0]}`}>
