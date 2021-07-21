@@ -9,7 +9,6 @@ function DoActivity(props) {
   const workout = props.workouts.find((a) => a.id === Number(workoutId));
   const activityIndex = workout.activities.indexOf(Number(activityId));
 
-  // Bestow congratulations and button to return home on completion.
   if (activityIndex < 0) {
     return (
       <div>
