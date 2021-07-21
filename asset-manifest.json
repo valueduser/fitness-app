@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/fitness-app/static/css/main.dbdc3218.chunk.css",
-    "main.js": "/fitness-app/static/js/main.2305887b.chunk.js",
-    "main.js.map": "/fitness-app/static/js/main.2305887b.chunk.js.map",
-    "runtime-main.js": "/fitness-app/static/js/runtime-main.f2468e87.js",
-    "runtime-main.js.map": "/fitness-app/static/js/runtime-main.f2468e87.js.map",
-    "static/js/2.def6602a.chunk.js": "/fitness-app/static/js/2.def6602a.chunk.js",
-    "static/js/2.def6602a.chunk.js.map": "/fitness-app/static/js/2.def6602a.chunk.js.map",
-    "static/js/3.2d560d09.chunk.js": "/fitness-app/static/js/3.2d560d09.chunk.js",
-    "static/js/3.2d560d09.chunk.js.map": "/fitness-app/static/js/3.2d560d09.chunk.js.map",
+    "main.css": "/fitness-app/static/css/main.130b765b.chunk.css",
+    "main.js": "/fitness-app/static/js/main.4a7807b9.chunk.js",
+    "main.js.map": "/fitness-app/static/js/main.4a7807b9.chunk.js.map",
+    "runtime-main.js": "/fitness-app/static/js/runtime-main.8f79b513.js",
+    "runtime-main.js.map": "/fitness-app/static/js/runtime-main.8f79b513.js.map",
+    "static/js/2.4099a69a.chunk.js": "/fitness-app/static/js/2.4099a69a.chunk.js",
+    "static/js/2.4099a69a.chunk.js.map": "/fitness-app/static/js/2.4099a69a.chunk.js.map",
+    "static/js/3.43504ad5.chunk.js": "/fitness-app/static/js/3.43504ad5.chunk.js",
+    "static/js/3.43504ad5.chunk.js.map": "/fitness-app/static/js/3.43504ad5.chunk.js.map",
     "index.html": "/fitness-app/index.html",
-    "static/css/main.dbdc3218.chunk.css.map": "/fitness-app/static/css/main.dbdc3218.chunk.css.map",
-    "static/js/2.def6602a.chunk.js.LICENSE.txt": "/fitness-app/static/js/2.def6602a.chunk.js.LICENSE.txt",
+    "static/css/main.130b765b.chunk.css.map": "/fitness-app/static/css/main.130b765b.chunk.css.map",
+    "static/js/2.4099a69a.chunk.js.LICENSE.txt": "/fitness-app/static/js/2.4099a69a.chunk.js.LICENSE.txt",
+    "static/media/avatar1.31d1915c.svg": "/fitness-app/static/media/avatar1.31d1915c.svg",
     "static/media/countdownBeep.250aa10d.mp3": "/fitness-app/static/media/countdownBeep.250aa10d.mp3",
     "static/media/countdownCompleteChime.57d5e004.mp3": "/fitness-app/static/media/countdownCompleteChime.57d5e004.mp3",
     "static/media/logo.6ce24c58.svg": "/fitness-app/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f2468e87.js",
-    "static/js/2.def6602a.chunk.js",
-    "static/css/main.dbdc3218.chunk.css",
-    "static/js/main.2305887b.chunk.js"
+    "static/js/runtime-main.8f79b513.js",
+    "static/js/2.4099a69a.chunk.js",
+    "static/css/main.130b765b.chunk.css",
+    "static/js/main.4a7807b9.chunk.js"
   ]
 }
