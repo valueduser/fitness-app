@@ -15,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <Home />
       <Route exact path="/" component={Home} />
       <Route exact path="/settings" component={Settings} />
       <Route exact path="/addWorkout" component={AddWorkout} />

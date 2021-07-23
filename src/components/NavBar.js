@@ -18,18 +18,25 @@ function NavBar() {
   return (
     <nav className="navBar">
       <button onClick={handleToggle}>
-      {navbarOpen ? (
-        <MdClose style={{ color: "#fff", width: "40px", height: "40px" }} />
+      {
+        navbarOpen ? (
+          <MdClose style={{ color: "#fff", width: "40px", height: "40px" }} />
         ) : (
           <FiMenu style={{ color: "#7b7b7b", width: "40px", height: "40px" }} />
+
         )}
       </button>
       <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
         <Link to="/" onClick={() => closeMenu()}>Home</Link>
         <Link to="/settings" onClick={() => closeMenu()}>Settings</Link>
-        <Link to="/addActivity" onClick={() => closeMenu()}>AddActivity</Link>
+        <Link to="/addActivity" onClick={() => closeMenu()}>Add Activity</Link>
       </ul>
-      <img alt="User's avatar" src={avatar1}></img>
+      <div>
+        <Link to="/settings" onClick={() => closeMenu()}>
+          <img alt="User's avatar" src={avatar1}></img>
+        </Link>
+      </div>
+      
     </nav>
   );
 }
