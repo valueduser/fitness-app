@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Timer from "./Timer";
+import Counter from "./Counter";
+
 
 function DoActivity(props) {
   const { workoutId, activityId } = useParams();
@@ -25,15 +27,13 @@ function DoActivity(props) {
     if(!!props.activity.duration) 
     {
       return <div>
-        <Timer id={props.activity.id} time={props.activity.duration}></Timer>
+        <Timer id={props.activity.id} time={props.activity.duration} image={activity.image} imageAltText={activity.name}></Timer>
         <h4>Duration: {activity.duration}</h4>
       </div>;
     } else 
     {
-      //TODO: make a tap-able counter for sets/reps
-      return <div>Place holder for tap-able counter
-        <h4>Reps: {activity.reps}</h4>
-        <h4>Sets: {activity.sets}</h4>
+      return <div>
+        <Counter clickableImage={activity.image} imageAltText={activity.name} reps={activity.reps} sets={activity.sets}></Counter>
       </div>
     }
   }
@@ -42,7 +42,6 @@ function DoActivity(props) {
     <div>
       <div>
         <h4>{activity.name}</h4>
-        <img src={activity.image} alt={activity.name}></img>
         <RenderTimerOrCounter activity={activity}></RenderTimerOrCounter>
         <h4>Equipment: {activity.equipment.length > 0 ? activity.equipment : "none"}</h4>
         <h4>Notes: {activity.notes}</h4>

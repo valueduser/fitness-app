@@ -36,6 +36,7 @@ function Timer(props) {
 
   return (
     <div>
+      <div><img src={props.image} alt={props.imageAltText}></img></div>
       <ReactCountDown
         id="renderedTimer"
         key={props.id}
