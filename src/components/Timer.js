@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import ReactCountDown, { zeroPad } from "react-countdown";
 import countdownBeepFile from "../assets/countdownBeep.mp3";
 import countdownCompleteChimeFile from "../assets/countdownCompleteChime.mp3";
+import ActivityCompleteIndicator from "../components/ActivityCompleteIndicator";
 
 function Timer(props) {
   const countdownBeepSound = new Audio(countdownBeepFile);
@@ -11,10 +13,12 @@ function Timer(props) {
   countdownBeepSound.muted = false;
   countdownCompleteChimeSound.muted = false;
 
+  const [showCompleted, setShowCompleted] = useState(false);
+
   const renderer = ({ minutes, seconds }) => {
     return (
-      <span>
-        {zeroPad(minutes)}:{zeroPad(seconds)}
+      <span display="inline">
+        {zeroPad(minutes)}:{zeroPad(seconds)}<ActivityCompleteIndicator display={showCompleted}></ActivityCompleteIndicator>
       </span>
     );
   };
@@ -27,6 +31,7 @@ function Timer(props) {
   const countDownBeeps = (evt, count) => {
     if (evt.completed === false || count > TIMER_WARNING_SECONDS) return;
     if (count === TIMER_WARNING_SECONDS) {
+      setShowCompleted(true);
       countdownCompleteChimeSound.play();
     } else {
       countdownBeepSound.play();

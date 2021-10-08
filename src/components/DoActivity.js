@@ -28,7 +28,6 @@ function DoActivity(props) {
     {
       return <div>
         <Timer id={props.activity.id} time={props.activity.duration} image={activity.image} imageAltText={activity.name}></Timer>
-        <h4>Duration: {activity.duration}</h4>
       </div>;
     } else 
     {
