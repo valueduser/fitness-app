@@ -34,6 +34,7 @@ function NavBar() {
       <div>
         <Link to="/settings" onClick={() => closeMenu()}>
           <img alt="User's avatar" src={avatar1}></img>
+          {/* TODO: Pull this from a user's settings */}
         </Link>
       </div>
       

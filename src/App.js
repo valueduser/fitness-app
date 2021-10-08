@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Home from "./components/Home";
 import Settings from "./components/Settings";
-import { Route } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import AddWorkout from "./components/AddWorkout";
 import AddActivity from "./components/AddActivity";
@@ -15,14 +15,16 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Home />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/settings" component={Settings} />
-      <Route exact path="/addWorkout" component={AddWorkout} />
-      <Route exact path="/addActivity" component={AddActivity} />
-      <Route path="/editWorkout/:workoutId?" component={EditWorkout} />
-      <Route path="/doWorkout/:workoutId?" component={DoWorkout} />
-      <Route path="/doActivity/:workoutId?/:activityId?" component={DoActivity} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/settings" component={Settings} />
+        <Route exact path="/addWorkout" component={AddWorkout} />
+        <Route exact path="/addActivity" component={AddActivity} />
+        <Route path="/editWorkout/:workoutId?" component={EditWorkout} />
+        <Route path="/doWorkout/:workoutId?" component={DoWorkout} />
+        <Route path="/doActivity/:workoutId?/:activityId?" component={DoActivity} />
+        <Redirect to="/"></Redirect>
+      </Switch>
     </div>
   );
 }

@@ -24,7 +24,7 @@ function Workout(props) {
 function Home(props) {
   return (
     <div>
-      <h1>welcome to home!</h1>
+      <h1>Available Workouts</h1>
       <div className="workout-list">
         {props.workouts.map((workout, index) => (
           <Workout
