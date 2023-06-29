@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
-    "@pmmmwh/react-refresh-webpack-plugin": "0.4.2",
+    "@pmmmwh/react-refresh-webpack-plugin": "0.5.10",
     "@sentry/react": "^6.13.3",
     "@sentry/tracing": "^6.13.3",
     "@svgr/webpack": "5.5.0",
@@ -73,7 +73,7 @@
     "url-loader": "4.1.1",
     "web-vitals": "^0.2.4",
     "webpack": "4.44.2",
-    "webpack-dev-server": "3.11.0",
+    "webpack-dev-server": "3.11.3",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "7.0.0"
   },
