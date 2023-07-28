@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
+import { createRoot } from 'react-dom/client';
 
 Sentry.init({
   dsn: "https://53762b96badf4af5a85b494332e73aa3@o141824.ingest.sentry.io/5614947",
@@ -20,16 +21,28 @@ Sentry.init({
   tracesSampleRate: 1.0,
 });
 
-ReactDOM.render(
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <BrowserRouter>
+//       <Provider store={store}>
+//         <App />
+//       </Provider>
+//     </BrowserRouter>
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+  </React.StrictMode>
+  );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
