@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "../App.css";
 
-function DoWorkout(props) {
+function DoWorkout(props: any) {
   const { workoutId } = useParams();
   const workout = props.workouts.find((w) => w.id === Number(workoutId));
 

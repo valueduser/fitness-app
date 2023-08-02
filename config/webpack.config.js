@@ -419,7 +419,6 @@ module.exports = function (webpackEnv) {
                     },
                   ],
                 ],
-                
                 plugins: [
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
@@ -693,7 +692,6 @@ module.exports = function (webpackEnv) {
                 noEmit: true,
                 incremental: true,
                 tsBuildInfoFile: paths.appTsBuildInfoFile,
-                allowImportingTsExtensions: true
               },
             },
             context: paths.appPath,

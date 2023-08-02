@@ -1,14 +1,14 @@
 import React from "react";
 import "./App.css";
-import Home from "./components/Home.tsx";
-import Settings from "./components/Settings.tsx";
+import Home from "./components/Home";
+import Settings from "./components/Settings";
 import { Navigate, Route, Routes } from "react-router-dom";
-import NavBar from "./components/NavBar.tsx";
-import AddWorkout from "./components/AddWorkout.tsx";
-import AddActivity from "./components/AddActivity.tsx";
-import EditWorkout from "./components/EditWorkout.tsx";
-import DoWorkout from "./components/DoWorkout.tsx";
-import DoActivity from "./components/DoActivity.tsx";
+import NavBar from "./components/NavBar";
+import AddWorkout from "./components/AddWorkout";
+import AddActivity from "./components/AddActivity";
+import EditWorkout from "./components/EditWorkout";
+import DoWorkout from "./components/DoWorkout";
+import DoActivity from "./components/DoActivity";
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import ActivityList from "./ActivityList.tsx";
+import ActivityList from "./ActivityList";
 import "../App.css";
 
 function AddWorkout(props) {

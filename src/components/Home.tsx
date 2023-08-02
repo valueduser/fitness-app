@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-function Workout(props) {
+function Workout(props: any) {
   return (
     <div className="workout">
       {props.workout.name}
