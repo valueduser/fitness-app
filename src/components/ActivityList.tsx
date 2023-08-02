@@ -1,7 +1,7 @@
 import React from "react";
-import { Activity } from "./Activity";
+import { Activity } from "./Activity.tsx";
 
-export function ActivityList({ allItems, listType }) {
+export default function ActivityList({ allItems, listType }) {
   let listItems;
   if (allItems?.length > 1) {
     listItems = allItems.map((itemObj, index) => {

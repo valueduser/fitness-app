@@ -693,6 +693,7 @@ module.exports = function (webpackEnv) {
                 noEmit: true,
                 incremental: true,
                 tsBuildInfoFile: paths.appTsBuildInfoFile,
+                allowImportingTsExtensions: true
               },
             },
             context: paths.appPath,
@@ -725,7 +726,7 @@ module.exports = function (webpackEnv) {
       !disableESLintPlugin &&
         new ESLintPlugin({
           // Plugin options
-          extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
+          extensions: ['.js', '.mjs', '.jsx', '.ts', '.tsx'],
           formatter: require.resolve('react-dev-utils/eslintFormatter'),
           eslintPath: require.resolve('eslint'),
           failOnError: !(isEnvDevelopment && emitErrorsAsWarnings),

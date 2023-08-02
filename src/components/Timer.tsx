@@ -2,7 +2,8 @@ import { useState } from 'react';
 import ReactCountDown, { zeroPad } from "react-countdown";
 import countdownBeepFile from "../assets/countdownBeep.mp3";
 import countdownCompleteChimeFile from "../assets/countdownCompleteChime.mp3";
-import ActivityCompleteIndicator from "../components/ActivityCompleteIndicator";
+import ActivityCompleteIndicator from "./ActivityCompleteIndicator.tsx";
+import React from 'react';
 
 function Timer(props) {
   const countdownBeepSound = new Audio(countdownBeepFile);

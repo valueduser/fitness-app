@@ -1,5 +1,5 @@
 import React from "react";
-import { ActivityList } from "./ActivityList";
+import ActivityList from "./ActivityList.tsx";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import "../App.css";

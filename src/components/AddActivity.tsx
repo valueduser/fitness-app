@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ActivityForm } from "./ActivityForm";
+import { ActivityForm } from "./ActivityForm.tsx";
 
 
 function AddActivity() {

@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Timer from "./Timer";
-import Counter from "./Counter";
+import Timer from "./Timer.tsx";
+import Counter from "./Counter.tsx";
+import React from "react";
 
 
 function DoActivity(props) {
