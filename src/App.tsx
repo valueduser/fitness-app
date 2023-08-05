@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Home from "./components/Home";
 import Settings from "./components/Settings";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import AddWorkout from "./components/AddWorkout";
 import AddActivity from "./components/AddActivity";

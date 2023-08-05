@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { Workout } from "../types/Workout";
 
-function Workout(props: any) {
+
+function WorkoutComponent(props: any) {
   return (
     <div className="workout">
       {props.workout.name}
@@ -21,13 +23,13 @@ function Workout(props: any) {
   );
 }
 
-function Home(props) {
+function Home(props: any) {
   return (
     <div>
       <h1>Available Workouts</h1>
       <div className="workout-list">
-        {props.workouts.map((workout, index) => (
-          <Workout
+        {props.workouts.map((workout: Workout, index: number) => (
+          <WorkoutComponent
             index={index}
             key={index}
             workout={workout}

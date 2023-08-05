@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import countdownCompleteChimeFile from "../assets/countdownCompleteChime.mp3";
 import ActivityCompleteIndicator from "./ActivityCompleteIndicator.tsx";
 
-function Counter(props) {
+function Counter(props: any) {
   
   const [sets, setSets] = useState(Number(props.sets));
   const [reps, setReps] = useState(Number(props.reps));

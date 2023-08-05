@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -15,22 +14,8 @@ Sentry.init({
   integrations: [
     new Integrations.BrowserTracing(),
   ],
-
-  // We recommend adjusting this value in production, or using tracesSampler
-  // for finer control
   tracesSampleRate: 1.0,
 });
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <BrowserRouter>
-//       <Provider store={store}>
-//         <App />
-//       </Provider>
-//     </BrowserRouter>
-//   </React.StrictMode>,
-//   document.getElementById("root")
-// );
 
 const container = document.getElementById('root');
 const root = createRoot(container!);

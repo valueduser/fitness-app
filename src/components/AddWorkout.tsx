@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import ActivityList from "./ActivityList";
 import "../App.css";
 
-function AddWorkout(props) {
+function AddWorkout(props: any) {
   const [workoutName, setWorkoutName] = useState("");
 
-  const handleEvent = (index) => {
+  const handleEvent = (index: number) => {
     // const newActivities = [...activities];
     // if (newActivities[index].list === "workoutActivities") {
     //   newActivities[index].list = "availableActivities";
@@ -16,7 +16,7 @@ function AddWorkout(props) {
     // setActivities(newActivities);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     //TODO: populate the name, activities etc properties of the new workout and save
     alert(e.target.value);
@@ -51,7 +51,7 @@ function AddWorkout(props) {
   );
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
   return {
     workouts: state.workouts,
     activities: state.activities,

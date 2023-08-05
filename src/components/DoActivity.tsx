@@ -6,7 +6,7 @@ import Counter from "./Counter";
 import React from "react";
 
 
-function DoActivity(props) {
+function DoActivity(props: any) {
   const { workoutId, activityId } = useParams();
   const activity = props.activities.find((a) => a.id === Number(activityId));
   const workout = props.workouts.find((a) => a.id === Number(workoutId));
@@ -23,7 +23,7 @@ function DoActivity(props) {
     );
   }
 
-  function RenderTimerOrCounter(props)
+  function RenderTimerOrCounter(props: any)
   {
     if(!!props.activity.duration) 
     {

@@ -1,7 +1,7 @@
 import React from "react";
-import { Activity } from "./Activity";
+import { ActivityComponent } from "./Activity";
 
-export default function ActivityList({ allItems, listType }) {
+export default function ActivityList({ allItems, handleEvent, listType }) {
   let listItems;
   if (allItems?.length > 1) {
     listItems = allItems.map((itemObj, index) => {
@@ -9,7 +9,7 @@ export default function ActivityList({ allItems, listType }) {
       //   return null;
       // }
       return (
-        <Activity
+        <ActivityComponent
           activity={itemObj}
           listType={listType}
           key={index}

@@ -1,10 +1,11 @@
 import React from "react";
+import { Activity } from "../types/Activity"
 
-export function Activity({ activity, listType, index }) {
-  const toggleActivity = (activity) => {
+export function ActivityComponent({ activity, listType, index }: {activity: Activity, listType: string, index: number}) {
+  const toggleActivity = (activity: Activity) => {
     
     // const newActivities = workout.activities[index];
-    if (activity.list === "workoutActivities") {
+    if (activity.list === "workoutActivities") { // TODO: don't have the activity know which workout it belongs to. That should be the responsibilty of the workout
       activity.list = "availableActivities";
     } else {
       activity.list = "workoutActivities";
@@ -25,4 +26,4 @@ export function Activity({ activity, listType, index }) {
   );
 }
 
-export default Activity;
+export default ActivityComponent;

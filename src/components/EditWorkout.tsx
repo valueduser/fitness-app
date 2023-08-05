@@ -3,12 +3,14 @@ import ActivityList from "./ActivityList";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import "../App.css";
+import { Activity } from "../types/Activity";
+import { Workout } from "../types/Workout";
 
-function EditWorkout(props) {
+function EditWorkout(props: any) {
   const { workoutId } = useParams();
-  const workout = props.workouts.find((w) => w.id === Number(workoutId));
+  const workout = props.workouts.find((w: Workout) => w.id === Number(workoutId));
 
-  const handleChange = (e) => {
+  const handleChange = (e: Event) => {
     console.warn(e.target.value);
   };
 
@@ -54,17 +56,17 @@ function EditWorkout(props) {
   );
 }
 
-const linkWorkoutActivities = (workout, allActivities) => {
-  const workoutActivities = [];
+const linkWorkoutActivities = (workout: Workout, allActivities: Activity[]) => {
+  const workoutActivities: number[] = [];
 
-  workout.activities.forEach((activity) =>
-    workoutActivities.push(allActivities.find((act) => act.id === activity))
+  workout.activities.forEach((activity: number) =>
+    workoutActivities.push(allActivities.find((act: Activity) => act.id === activity))
   );
 
   return workoutActivities;
 };
 
-const filterActivities = (workout, allActivities) => {
+const filterActivities = (workout: Workout, allActivities: number[]) => {
   const workoutActivities = linkWorkoutActivities(workout, allActivities);
 
   const unassignedActivities = allActivities.filter(
@@ -81,9 +83,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
   return {
-    updateWorkout: (workout) =>
+    updateWorkout: (workout: Workout) =>
       dispatch({ type: "workoutList/updateWorkout", payload: workout }),
   };
 };
