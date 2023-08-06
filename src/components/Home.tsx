@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Workout } from "../types/Workout";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Workout } from '../types/Workout';
 
 
 function WorkoutComponent(props: any) {
   return (
-    <div className="workout">
+    <div className='workout'>
       {props.workout.name}
       <div>
         <Link to={`/editWorkout/${props.workout.id}`}>
@@ -27,7 +27,7 @@ function Home(props: any) {
   return (
     <div>
       <h1>Available Workouts</h1>
-      <div className="workout-list">
+      <div className='workout-list'>
         {props.workouts.map((workout: Workout, index: number) => (
           <WorkoutComponent
             index={index}
@@ -37,7 +37,7 @@ function Home(props: any) {
           />
         ))}
 
-        <Link to="/addWorkout">
+        <Link to='/addWorkout'>
           <button>New Workout</button>
         </Link>
       </div>
@@ -45,16 +45,16 @@ function Home(props: any) {
   );
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
   return {
     workouts: state.workouts,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
   return {
-    removeWorkout: (workout) =>
-      dispatch({ type: "workoutList/removeWorkout", payload: workout }),
+    removeWorkout: (workout: any) =>
+      dispatch({ type: 'workoutList/removeWorkout', payload: workout }),
   };
 };
 

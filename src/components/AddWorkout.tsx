@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import ActivityList from "./ActivityList";
-import "../App.css";
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import ActivityList from './ActivityList';
+import '../App.css';
 
 function AddWorkout(props: any) {
-  const [workoutName, setWorkoutName] = useState("");
+  const [workoutName, setWorkoutName] = useState('');
 
   const handleEvent = (index: number) => {
     // const newActivities = [...activities];
-    // if (newActivities[index].list === "workoutActivities") {
-    //   newActivities[index].list = "availableActivities";
+    // if (newActivities[index].list === 'workoutActivities') {
+    //   newActivities[index].list = 'availableActivities';
     // } else {
-    //   newActivities[index].list = "workoutActivities";
+    //   newActivities[index].list = 'workoutActivities';
     // }
     // setActivities(newActivities);
   };
@@ -26,25 +26,25 @@ function AddWorkout(props: any) {
     <div>
       <h1>Add Workout!</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="workout-name">Workout Name: </label>
+        <label htmlFor='workout-name'>Workout Name: </label>
         <input
-          name="workout-name"
-          type="text"
-          className="workout-name-input"
+          name='workout-name'
+          type='text'
+          className='workout-name-input'
           value={workoutName}
           onChange={(e) => setWorkoutName(e.target.value)}
         />
       </form>
-      <div className="activity-list">
+      <div className='activity-list'>
         <ActivityList
           allItems={null}
           handleEvent={handleEvent}
-          listType={"workoutActivities"}
+          listType={'workoutActivities'}
         />
         <ActivityList
           allItems={props.activities}
           handleEvent={handleEvent}
-          listType={"availableActivities"}
+          listType={'availableActivities'}
         />
       </div>
     </div>

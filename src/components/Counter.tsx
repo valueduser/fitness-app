@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import countdownCompleteChimeFile from "../assets/countdownCompleteChime.mp3";
-import ActivityCompleteIndicator from "./ActivityCompleteIndicator.tsx";
+import countdownCompleteChimeFile from '../assets/countdownCompleteChime.mp3';
+import ActivityCompleteIndicator from './ActivityCompleteIndicator';
 
 function Counter(props: any) {
   

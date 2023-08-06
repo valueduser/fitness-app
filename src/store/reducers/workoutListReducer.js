@@ -7,7 +7,7 @@ function nextWorkoutId(workouts) {
 
 const workoutListReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "workoutList/addWorkout":
+    case 'workoutList/addWorkout':
       return [
         ...state,
         {
@@ -17,9 +17,9 @@ const workoutListReducer = (state = initialState, action) => {
         },
       ];
 
-    case "workoutList/removeWorkout":
+    case 'workoutList/removeWorkout':
       return [...state.filter((workout) => workout.id !== action.payload.id)];
-    case "workoutList/updateWorkout":
+    case 'workoutList/updateWorkout':
       return state.map((workout) => {
         if (workout.id !== action.payload.id) return workout;
         return {
@@ -28,26 +28,26 @@ const workoutListReducer = (state = initialState, action) => {
           activities: action.payload.activities,
         };
       });
-    // return {
-    //   ...state,
-    //   workouts: state.workouts.map((workout) => {
-    //     if (workout.id !== action.payload.id) return workout;
+      // return {
+      //   ...state,
+      //   workouts: state.workouts.map((workout) => {
+      //     if (workout.id !== action.payload.id) return workout;
 
-    //     return {
-    //       id: action.payload.id,
-    //       name: action.payload.name,
-    //       activities: action.payload.activities,
-    //     };
-    //   }),
+      //     return {
+      //       id: action.payload.id,
+      //       name: action.payload.name,
+      //       activities: action.payload.activities,
+      //     };
+      //   }),
 
-    // [
-    //   ...state.workouts,
-    //   {
-    //     id: action.payload, //.id TODO:,
-    //     name: action.payload, //.name TODO:,
-    //     activities: action.payload, //.activities
-    //   },
-    // ],
+      // [
+      //   ...state.workouts,
+      //   {
+      //     id: action.payload, //.id TODO:,
+      //     name: action.payload, //.name TODO:,
+      //     activities: action.payload, //.activities
+      //   },
+      // ],
 
     default:
       return state;

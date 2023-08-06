@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import ReactCountDown, { zeroPad } from "react-countdown";
-import countdownBeepFile from "../assets/countdownBeep.mp3";
-import countdownCompleteChimeFile from "../assets/countdownCompleteChime.mp3";
-import ActivityCompleteIndicator from "./ActivityCompleteIndicator.tsx";
+import ReactCountDown, { zeroPad } from 'react-countdown';
+import countdownBeepFile from '../assets/countdownBeep.mp3';
+import countdownCompleteChimeFile from '../assets/countdownCompleteChime.mp3';
+import ActivityCompleteIndicator from './ActivityCompleteIndicator';
 import React from 'react';
 
 function Timer(props: any) {
@@ -18,7 +18,7 @@ function Timer(props: any) {
 
   const renderer = ({ minutes, seconds }: { minutes: number; seconds: number }) => {
     return (
-      <span data-display="inline">
+      <span data-display='inline'>
         {zeroPad(minutes)}:{zeroPad(seconds)}<ActivityCompleteIndicator display={showCompleted}></ActivityCompleteIndicator>
       </span>
     );
@@ -44,14 +44,14 @@ function Timer(props: any) {
     <div>
       <div><img src={props.image} alt={props.imageAltText}></img></div>
       <ReactCountDown
-        data-id="renderedTimer"
+        data-id='renderedTimer'
         key={props.id}
         date={Date.now() + Number(props.time * 1000)}
         renderer={renderer}
       ></ReactCountDown>
-      <div id="beepTimer" data-display="none">
+      <div id='beepTimer' data-display='none'>
         <ReactCountDown
-          data-id="beepTimer"
+          data-id='beepTimer'
           key={props.id}
           date={
             Date.now() +

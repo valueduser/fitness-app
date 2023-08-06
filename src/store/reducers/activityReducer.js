@@ -2,7 +2,7 @@ const initialState = {};
 
 const activityReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "activity/updateActivity":
+    case 'activity/updateActivity':
       return state.map((activity) => {
         if (activity.id !== action.payload.id) return activity;
         return {

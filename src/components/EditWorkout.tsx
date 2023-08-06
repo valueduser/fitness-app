@@ -1,20 +1,20 @@
-import React from "react";
-import ActivityList from "./ActivityList";
-import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
-import "../App.css";
-import { Activity } from "../types/Activity";
-import { Workout } from "../types/Workout";
+import React from 'react';
+import ActivityList from './ActivityList';
+import { useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
+import '../App.css';
+import { Activity } from '../types/Activity';
+import { Workout } from '../types/Workout';
 
 function EditWorkout(props: any) {
   const { workoutId } = useParams();
   const workout = props.workouts.find((w: Workout) => w.id === Number(workoutId));
 
   const handleChange = (e: Event) => {
-    console.warn(e.target.value);
+    console.warn((e.target as HTMLTextAreaElement).value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     //TODO: populate the name, activities etc properties of the new workout and save
     console.log(e);
@@ -28,28 +28,30 @@ function EditWorkout(props: any) {
     <div>
       <h1>Edit Workout!</h1>
       <h3>{workout.name}</h3>
-      <form id="editWorkoutForm" onSubmit={handleSubmit}>
-        <label htmlFor="workout-name">Workout Name: </label>
+      <form id='editWorkoutForm' onSubmit={handleSubmit}>
+        <label htmlFor='workout-name'>Workout Name: </label>
         <input
-          name="workout-name"
-          type="text"
-          className="workout-name-input"
+          name='workout-name'
+          type='text'
+          className='workout-name-input'
           value={props.workoutName}
-          onBlur={handleChange}
+          onBlur={handleChange as any}
         />
 
-        <div className="activity-list">
+        <div className='activity-list'>
           <ActivityList
             allItems={linkWorkoutActivities(workout, props.activities)}
-            listType={"workoutActivities"}
+            handleEvent={null}
+            listType={'workoutActivities'}
           />
           <ActivityList
             allItems={filterActivities(workout, props.activities)}
-            listType={"availableActivities"}
+            handleEvent={null}
+            listType={'availableActivities'}
           />
         </div>
       </form>
-      <button type="submit" form="editWorkoutForm" value="Save">
+      <button type='submit' form='editWorkoutForm' value='Save'>
         Save
       </button>
     </div>
@@ -59,24 +61,27 @@ function EditWorkout(props: any) {
 const linkWorkoutActivities = (workout: Workout, allActivities: Activity[]) => {
   const workoutActivities: number[] = [];
 
-  workout.activities.forEach((activity: number) =>
-    workoutActivities.push(allActivities.find((act: Activity) => act.id === activity))
+  workout.activities.forEach((activity: number) => {
+    const matchingActivity = allActivities.find((act: Activity) => act.id === activity)
+    if (matchingActivity)
+      workoutActivities.push(matchingActivity.id)
+  }
   );
 
   return workoutActivities;
 };
 
-const filterActivities = (workout: Workout, allActivities: number[]) => {
+const filterActivities = (workout: Workout, allActivities: Activity[]) => {
   const workoutActivities = linkWorkoutActivities(workout, allActivities);
 
   const unassignedActivities = allActivities.filter(
-    (e) => !workoutActivities.includes(e)
+    (e) => !workoutActivities.includes(e.id)
   );
 
   return unassignedActivities;
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
   return {
     workouts: state.workouts,
     activities: state.activities,
@@ -86,7 +91,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch: any) => {
   return {
     updateWorkout: (workout: Workout) =>
-      dispatch({ type: "workoutList/updateWorkout", payload: workout }),
+      dispatch({ type: 'workoutList/updateWorkout', payload: workout }),
   };
 };
 

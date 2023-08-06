@@ -1,22 +1,21 @@
-import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import Timer from "./Timer";
-import Counter from "./Counter";
-import React from "react";
+import { useParams, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Timer from './Timer';
+import Counter from './Counter';
+import React from 'react';
 
 
 function DoActivity(props: any) {
   const { workoutId, activityId } = useParams();
-  const activity = props.activities.find((a) => a.id === Number(activityId));
-  const workout = props.workouts.find((a) => a.id === Number(workoutId));
+  const activity = props.activities.find((a: any) => a.id === Number(activityId));
+  const workout = props.workouts.find((a: any) => a.id === Number(workoutId));
   const activityIndex = workout.activities.indexOf(Number(activityId));
 
   if (activityIndex < 0) {
     return (
       <div>
         <h4>🎉 Workout Completed 🎉</h4>
-        <Link to="/">
+        <Link to='/'>
           <button>Home</button>
         </Link>
       </div>
@@ -43,7 +42,7 @@ function DoActivity(props: any) {
       <div>
         <h4>{activity.name}</h4>
         <RenderTimerOrCounter activity={activity}></RenderTimerOrCounter>
-        <h4>Equipment: {activity.equipment.length > 0 ? activity.equipment : "none"}</h4>
+        <h4>Equipment: {activity.equipment.length > 0 ? activity.equipment : 'none'}</h4>
         <h4>Notes: {activity.notes}</h4>
       </div>
       <Link
@@ -57,7 +56,7 @@ function DoActivity(props: any) {
   );
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
   return {
     workouts: state.workouts,
     activities: state.activities,
