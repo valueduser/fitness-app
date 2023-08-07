@@ -4,8 +4,8 @@ import activityReducer from "./reducers/activityReducer";
 import { devToolsEnhancer } from "redux-devtools-extension";
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseRestEndpoint = process.env.REACT_APP_SUPABASE_REST;
-const supabaseApiKey = process.env.REACT_APP_SUPABASE_API_KEY;
+const supabaseRestEndpoint: string = process.env.REACT_APP_SUPABASE_REST || "";
+const supabaseApiKey: string = process.env.REACT_APP_SUPABASE_API_KEY || "";
 const supabase = createClient(supabaseRestEndpoint, supabaseApiKey);
 
 //Combine our reducers and change property names
@@ -33,7 +33,7 @@ async function fetchWorkouts() {
 }
 
 //Create out store and set our reducers, state, and middleware.
-const store = createStore(allReducers, devToolsEnhancer());
+const store = createStore(allReducers, devToolsEnhancer({}));
 
 // Fetch activities and update store
 fetchActivities().then((data) => {
