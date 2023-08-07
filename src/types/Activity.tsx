@@ -9,7 +9,9 @@ export type Activity = {
   weightUnits: string | undefined, 
   tags: string[] | [], 
   duration: number | undefined, 
-  durationUnits: string | undefined
+  durationUnits: string | undefined,
+  notes: string | undefined,
+  instructions: string | undefined,
   list: string; // TODO: move this onto the workout class or remove all together.
 };
 

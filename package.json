@@ -8,6 +8,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@sentry/react": "^7.60.1",
     "@sentry/tracing": "^7.60.1",
+    "@supabase/supabase-js": "^2.32.0",
     "@svgr/webpack": "^8.0.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -74,7 +75,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "lint" : "./node_modules/.bin/eslint",
+    "lint": "./node_modules/.bin/eslint",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
