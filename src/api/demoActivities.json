@@ -284,5 +284,38 @@
     "equipment": ["Box"],
     "weight": "",
     "tags": ["endurance", "conditioning", "strength", "foraker"]
+  },
+  {
+    "id": 23,
+    "name": "Hip External Rotation Circles",
+    "image": "https://thumbs.gfycat.com/PerfectAcademicBarebirdbat-max-1mb.gif",
+    "reps": "20",
+    "sets": "2",
+    "notes": "Each side",
+    "equipment": [""],
+    "weight": "",
+    "tags": []
+  },
+  {
+    "id": 24,
+    "name": "Clam Shells",
+    "image": "https://thumbs.gfycat.com/PerfectAcademicBarebirdbat-max-1mb.gif",
+    "reps": "20",
+    "sets": "2",
+    "notes": "Each side",
+    "equipment": ["Resistance Band"],
+    "weight": "",
+    "tags": []
+  },
+  {
+    "id": 25,
+    "name": "Side Step Abduction",
+    "image": "https://thumbs.gfycat.com/PerfectAcademicBarebirdbat-max-1mb.gif",
+    "reps": "20",
+    "sets": "2",
+    "notes": "Each side",
+    "equipment": ["Resistance Band"],
+    "weight": "",
+    "tags": []
   }
 ]

@@ -33,7 +33,7 @@ function DoWorkout(props: any) {
     const equipment = Array.from(new Set())
     uniqueActivities.forEach(activityId => {
       const activity = props.activities.find((a: Activity) => a.id === Number(activityId));
-      if (activity.equipment.length > 0)
+      if (activity.equipment?.length > 0)
         equipment.push(activity.equipment.toString().trim());   
     });
     const uniqueEquipment = Array.from(new Set(equipment));

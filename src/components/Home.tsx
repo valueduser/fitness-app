@@ -28,13 +28,15 @@ function Home(props: any) {
     <div>
       <h1>Available Workouts</h1>
       <div className='workout-list'>
-        {props.workouts.map((workout: Workout, index: number) => (
-          <WorkoutComponent
-            index={index}
-            key={index}
+        {props.workouts.map((workout: Workout) => (
+          <div>
+            <WorkoutComponent
+            index={workout.id}
+            key={workout.id}
             workout={workout}
             remove={props.removeWorkout}
           />
+          </div>
         ))}
 
         <Link to='/addWorkout'>
