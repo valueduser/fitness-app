@@ -37,27 +37,8 @@ async function fetchWorkoutsWithActivities() {
     console.error('Error fetching workouts:', error);
     return [];
   }
-  // console.warn(data);
   return data;
 }
-
-// async function fetchWorkouts() {
-//   const { data, error } = await supabase.from("workout").select();
-//   if (error) {
-//     console.error('Error fetching workouts:', error);
-//     return [];
-//   }
-//   return data;
-// }
-
-// async function fetchWorkoutActivities() {
-//   const { data, error } = await supabase.from("workout_activity").select();
-//   if (error) {
-//     console.error('Error fetching workout - activity link:', error);
-//     return [];
-//   }
-//   return data;
-// }
 
 //Create out store and set our reducers, state, and middleware.
 const store = createStore(allReducers, devToolsEnhancer({}));
@@ -77,21 +58,5 @@ fetchWorkoutsWithActivities().then((data) => {
     payload: data,
   });
 });
-
-// // Fetch workouts and update store
-// fetchWorkouts().then((data) => {
-//   store.dispatch({
-//     type: 'SET_WORKOUTS',
-//     payload: data,
-//   });
-// });
-
-// // Fetch workout-activity linking table and update store
-// fetchWorkoutActivities().then((data) => {
-//   store.dispatch({
-//     type: 'SET_WORKOUT_ACTIVITY',
-//     payload: data,
-//   });
-// });
 
 export default store;
