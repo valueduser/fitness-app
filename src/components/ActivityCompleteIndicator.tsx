@@ -1,4 +1,6 @@
-function ActivityCompleteIndicator(props) {
+import React from 'react';
+
+function ActivityCompleteIndicator(props: any) {
 
   if(props.display === true){
     return (<span> ✅</span>);

@@ -419,7 +419,6 @@ module.exports = function (webpackEnv) {
                     },
                   ],
                 ],
-                
                 plugins: [
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
@@ -725,7 +724,7 @@ module.exports = function (webpackEnv) {
       !disableESLintPlugin &&
         new ESLintPlugin({
           // Plugin options
-          extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
+          extensions: ['.js', '.mjs', '.jsx', '.ts', '.tsx'],
           formatter: require.resolve('react-dev-utils/eslintFormatter'),
           eslintPath: require.resolve('eslint'),
           failOnError: !(isEnvDevelopment && emitErrorsAsWarnings),
