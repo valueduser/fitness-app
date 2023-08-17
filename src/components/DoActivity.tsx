@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Timer from './Timer';
 import Counter from './Counter';
 import React from 'react';
+import { Activity } from '../types/Activity';
 
 
 function DoActivity(props: any) {
@@ -10,6 +11,11 @@ function DoActivity(props: any) {
   const activity = props.activities.find((a: any) => a.id === Number(activityId));
   const workout = props.workouts.find((a: any) => a.id === Number(workoutId));
   const activityIndex = workout.activities.indexOf(Number(activityId));
+
+  function getNextActivityName(props: any): string {
+    const nextActivity: Activity = props.activities.find((a: any) => a.id === Number(workout.activities[activityIndex + 1]))
+    return nextActivity ? nextActivity.name: 'Finished!'
+  }
 
   if (activityIndex < 0) {
     return (
@@ -39,19 +45,24 @@ function DoActivity(props: any) {
 
   return (
     <div>
-      <div>
+      <div className='current-activity'>
         <h4>{activity.name}</h4>
         <RenderTimerOrCounter activity={activity}></RenderTimerOrCounter>
         <h4>Equipment: {activity.equipment?.length > 0 ? activity.equipment : 'none'}</h4>
         <h4>Notes: {activity.notes}</h4>
       </div>
-      <Link
-        to={`/doActivity/${Number(workoutId)}/${
-          workout.activities[activityIndex + 1]
-        }`}
-      >
-        <button>Next</button>
-      </Link>
+      <div className='next-activity'>
+        <h4>Up Next: {
+            getNextActivityName(props)
+          }</h4>
+          <Link
+            to={`/doActivity/${Number(workoutId)}/${
+              workout.activities[activityIndex + 1]
+            }`}
+          >
+          <button>Next</button>
+        </Link>
+      </div>
     </div>
   );
 }
