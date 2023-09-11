@@ -2,9 +2,10 @@ import { useParams, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Timer from './Timer';
 import Counter from './Counter';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import { Activity } from '../types/Activity';
-
+import supabaseClient from '../supabaseClient';
 
 function DoActivity(props: any) {
   const { workoutId, activityId } = useParams();
@@ -12,10 +13,26 @@ function DoActivity(props: any) {
   const workout = props.workouts.find((a: any) => a.id === Number(workoutId));
   const activityIndex = workout.activities.indexOf(Number(activityId));
 
+  const [imageURL, setImageURL] = useState('');
+
   function getNextActivityName(props: any): string {
     const nextActivity: Activity = props.activities.find((a: any) => a.id === Number(workout.activities[activityIndex + 1]))
     return nextActivity ? nextActivity.name: 'Finished!'
   }
+
+  useEffect(() => {
+    (async () => {
+      const { data, error } = await supabaseClient.storage
+        .from("img")
+        .createSignedUrl(activity.image, 600);
+
+        if (error) {
+          throw new Error(error.message)
+        }
+        console.warn("setting the iumage url: ", data.signedUrl);
+        setImageURL(data.signedUrl);
+    })();
+  },[activity]);
 
   if (activityIndex < 0) {
     return (
@@ -33,12 +50,12 @@ function DoActivity(props: any) {
     if(!!props.activity.duration) 
     {
       return <div>
-        <Timer id={props.activity.id} time={props.activity.duration} image={activity.image} imageAltText={activity.name}></Timer>
+        <Timer id={props.activity.id} time={props.activity.duration} image={imageURL} imageAltText={activity.name}></Timer>
       </div>;
     } else 
     {
       return <div>
-        <Counter clickableImage={activity.image} imageAltText={activity.name} reps={activity.reps} sets={activity.sets}></Counter>
+        <Counter clickableImage={imageURL} imageAltText={activity.name} reps={activity.reps} sets={activity.sets}></Counter>
       </div>
     }
   }
