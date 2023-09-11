@@ -2,11 +2,7 @@ import { createStore, combineReducers } from "redux";
 import workoutReducer from "./reducers/workoutReducer";
 import activityReducer from "./reducers/activityReducer";
 import { devToolsEnhancer } from "redux-devtools-extension";
-import { createClient } from "@supabase/supabase-js";
-
-const supabaseRestEndpoint: string = process.env.REACT_APP_SUPABASE_REST || "";
-const supabaseApiKey: string = process.env.REACT_APP_SUPABASE_API_KEY || "";
-const supabase = createClient(supabaseRestEndpoint, supabaseApiKey);
+import supabaseClient from "../supabaseClient";
 
 //Combine our reducers and change property names
 const allReducers = combineReducers({
@@ -15,7 +11,7 @@ const allReducers = combineReducers({
 });
 
 async function fetchActivities() {
-  const { data, error } = await supabase.from("activity").select();
+  const { data, error } = await supabaseClient.from("activity").select();
   if (error) {
     console.error('Error fetching activities:', error);
     return [];
@@ -24,7 +20,7 @@ async function fetchActivities() {
 }
 
 async function fetchWorkoutsWithActivities() {
-  const { data, error } = await supabase.from('workout')
+  const { data, error } = await supabaseClient.from('workout')
   .select(`
     id,
     name,
