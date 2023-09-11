@@ -22,7 +22,12 @@ function DoActivity(props: any) {
 
   useEffect(() => {
     (async () => {
-      const { data, error } = await supabaseClient.storage
+      if (activity.image === null) {
+        setImageURL(`http://placehold.jp/3d4070/ffffff/150x150.png?text=${activity.name.replace(" ", "")}`);
+      } else if (activity.image.startsWith('http')) {
+        setImageURL(activity.image)
+      } else {
+        const { data, error } = await supabaseClient.storage
         .from("img")
         .createSignedUrl(activity.image, 600);
 
@@ -31,6 +36,7 @@ function DoActivity(props: any) {
         }
         console.warn("setting the iumage url: ", data.signedUrl);
         setImageURL(data.signedUrl);
+      }
     })();
   },[activity]);
 
