@@ -20,15 +20,15 @@ async function fetchActivities() {
 }
 
 async function fetchWorkoutsWithActivities() {
-  const { data, error } = await supabaseClient.from('workout')
-  .select(`
-    id,
-    name,
-    notes,
-    activity (
-      id
-    ) as activities
-  `)
+    const { data, error } = await supabaseClient.from('workout')
+    .select(`
+      id,
+      name,
+      notes,
+      activity (
+        id
+      ) as activities
+  `).order('id', { foreignTable: 'activity'});
   if (error) {
     console.error('Error fetching workouts:', error);
     return [];
@@ -36,7 +36,6 @@ async function fetchWorkoutsWithActivities() {
   return data;
 }
 
-//Create out store and set our reducers, state, and middleware.
 const store = createStore(allReducers, devToolsEnhancer({}));
 
 // Fetch activities and update store

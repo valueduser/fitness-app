@@ -4,6 +4,7 @@ export type Activity = {
   image: string | '', 
   reps: number | undefined, 
   sets: number | undefined, 
+  isBilateral: boolean | false, 
   equipment: string[] | [], 
   weight: number | undefined, 
   weightUnits: string | undefined, 
@@ -12,7 +13,7 @@ export type Activity = {
   durationUnits: string | undefined,
   notes: string | undefined,
   instructions: string | undefined,
-  list: string; // TODO: move this onto the workout class or remove all together.
+  list: string // TODO: move this onto the workout class or remove all together.
 };
 
 // TODO: make helper function class some where to define isDurationTypeActivity, isRepetitionTypeActivity

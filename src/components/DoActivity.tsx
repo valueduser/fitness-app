@@ -56,7 +56,7 @@ function DoActivity(props: any) {
     if(!!props.activity.duration) 
     {
       return <div>
-        <Timer id={props.activity.id} time={props.activity.duration} image={imageURL} imageAltText={activity.name}></Timer>
+        <Timer id={props.activity.id} time={props.activity.durationUnits === "seconds" ? props.activity.duration : props.activity.duration * 60} image={imageURL} imageAltText={activity.name}></Timer>
       </div>;
     } else 
     {
