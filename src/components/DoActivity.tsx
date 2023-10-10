@@ -9,12 +9,12 @@ import supabaseClient from '../supabaseClient';
 
 function DoActivity(props: any) {
   const { workoutId, activityId } = useParams();
-  const [time, setTime] = useState(3)
+  const [imageURL, setImageURL] = useState('');
+  const [time, setTime] = useState(0);
+
   const activity = props.activities.find((a: any) => a.id === Number(activityId));
   const workout = props.workouts.find((a: any) => a.id === Number(workoutId));
   const activityIndex = workout.activities.indexOf(Number(activityId));
-
-  const [imageURL, setImageURL] = useState('');
 
   function getNextActivity(props: any): Activity {
     return props.activities.find((a: any) => a.id === Number(workout.activities[activityIndex + 1]))
@@ -35,7 +35,6 @@ function DoActivity(props: any) {
 
   useEffect(() => {
     (async () => {
-      console.warn(activity);
       if (!activity.image) {
         setImageURL(`http://placehold.jp/3d4070/ffffff/150x150.png?text=${activity.name.replace(" ", "")}`);
       } else if (activity.image.startsWith('http')) {
@@ -70,8 +69,7 @@ function DoActivity(props: any) {
 
   function RenderTimerOrCounter(props: any)
   {
-    console.warn(props.activity.durationUnits);
-    setTime(props.activity.durationUnits === "seconds" ? props.activity.duration : props.activity.duration * 60)
+    setTime(props.activity.duration_units === "seconds" ? props.activity.duration : props.activity.duration * 60)
     if(!!props.activity.duration) 
     {
       return <div>

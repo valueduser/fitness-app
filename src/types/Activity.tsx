@@ -7,10 +7,10 @@ export type Activity = {
   isBilateral: boolean | false, 
   equipment: string[] | [], 
   weight: number | undefined, 
-  weightUnits: string | undefined, 
+  weight_units: string | undefined, 
   tags: string[] | [], 
   duration: number | undefined, 
-  durationUnits: string | undefined,
+  duration_units: string | undefined,
   notes: string | undefined,
   instructions: string | undefined,
 };
