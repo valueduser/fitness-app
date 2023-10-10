@@ -5,7 +5,6 @@ import Settings from './components/Settings';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import AddWorkout from './components/AddWorkout';
-import EditWorkout from './components/EditWorkout';
 import DoWorkout from './components/DoWorkout';
 import DoActivity from './components/DoActivity';
 
@@ -18,7 +17,6 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/settings' element={<Settings/>} />
         <Route path='/addWorkout' element={<AddWorkout/>} />
-        <Route path='/editWorkout/:workoutId?' element={<EditWorkout/>} />
         <Route path='/doWorkout/:workoutId?' element={<DoWorkout/>} />
         <Route path='/doActivity/:workoutId?/:activityId?' element={<DoActivity/>} />
       </Routes>
