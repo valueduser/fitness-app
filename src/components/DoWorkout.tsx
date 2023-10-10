@@ -10,24 +10,6 @@ function DoWorkout(props: any) {
   const { workoutId } = useParams();
   const workout = props.workouts.find((w: Workout) => w.id === Number(workoutId));
 
-  // const previous = (length, current) => {
-  //   return (current - 1 + length) % length;
-  // };
-
-  // const next = (length, current) => {
-  //   return (current + 1) % length;
-  // };
-
-  // const handleEvent = (index) => {
-  //   // const newActivities = [...activities];
-  //   // if (newActivities[index].list === 'workoutActivities') {
-  //   //   newActivities[index].list = 'availableActivities';
-  //   // } else {
-  //   //   newActivities[index].list = 'workoutActivities';
-  //   // }
-  //   // setActivities(newActivities);
-  // };
-
   const compileWorkoutEquipment = (activitiesIds: number[]) => {
     const uniqueActivities = Array.from(new Set(activitiesIds));
     const equipment = Array.from(new Set())

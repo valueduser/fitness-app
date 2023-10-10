@@ -9,20 +9,34 @@ import supabaseClient from '../supabaseClient';
 
 function DoActivity(props: any) {
   const { workoutId, activityId } = useParams();
+  const [time, setTime] = useState(3)
   const activity = props.activities.find((a: any) => a.id === Number(activityId));
   const workout = props.workouts.find((a: any) => a.id === Number(workoutId));
   const activityIndex = workout.activities.indexOf(Number(activityId));
 
   const [imageURL, setImageURL] = useState('');
 
+  function getNextActivity(props: any): Activity {
+    return props.activities.find((a: any) => a.id === Number(workout.activities[activityIndex + 1]))
+  }
+
   function getNextActivityName(props: any): string {
-    const nextActivity: Activity = props.activities.find((a: any) => a.id === Number(workout.activities[activityIndex + 1]))
+    const nextActivity = getNextActivity(props)
     return nextActivity ? nextActivity.name: 'Finished!'
+  }
+
+  function getNextActivityUrl(props: any): string {
+    const nextActivity = getNextActivity(props)
+    const url: string = nextActivity ? `/doActivity/${Number(workoutId)}/${
+      workout.activities[activityIndex + 1]
+    }` : `/fitness-app`
+    return url
   }
 
   useEffect(() => {
     (async () => {
-      if (activity.image === null) {
+      console.warn(activity);
+      if (!activity.image) {
         setImageURL(`http://placehold.jp/3d4070/ffffff/150x150.png?text=${activity.name.replace(" ", "")}`);
       } else if (activity.image.startsWith('http')) {
         setImageURL(activity.image)
@@ -34,7 +48,6 @@ function DoActivity(props: any) {
         if (error) {
           throw new Error(error.message)
         }
-        console.warn("setting the iumage url: ", data.signedUrl);
         setImageURL(data.signedUrl);
       }
     })();
@@ -51,12 +64,18 @@ function DoActivity(props: any) {
     );
   }
 
+  function reset() {
+    setTime(time + 0.00000000001)
+  }
+
   function RenderTimerOrCounter(props: any)
   {
+    console.warn(props.activity.durationUnits);
+    setTime(props.activity.durationUnits === "seconds" ? props.activity.duration : props.activity.duration * 60)
     if(!!props.activity.duration) 
     {
       return <div>
-        <Timer id={props.activity.id} time={props.activity.durationUnits === "seconds" ? props.activity.duration : props.activity.duration * 60} image={imageURL} imageAltText={activity.name}></Timer>
+        <Timer id={props.activity.id} time={time} image={imageURL} onClick={reset} imageAltText={activity.name}></Timer>
       </div>;
     } else 
     {
@@ -78,11 +97,7 @@ function DoActivity(props: any) {
         <h4>Up Next: {
             getNextActivityName(props)
           }</h4>
-          <Link
-            to={`/doActivity/${Number(workoutId)}/${
-              workout.activities[activityIndex + 1]
-            }`}
-          >
+          <Link to={getNextActivityUrl(props)}>
           <button>Next</button>
         </Link>
       </div>

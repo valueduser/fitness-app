@@ -8,6 +8,7 @@ function WorkoutComponent(props: any) {
   return (
     <div className='workout'>
       {props.workout.name}
+      {/* TODO: display required equipment (if any) and rough estimate of time*/}
       <div>
         <Link to={`/editWorkout/${props.workout.id}`}>
           {/* TODO: editWorkout page pass the workout and modify and return */}
