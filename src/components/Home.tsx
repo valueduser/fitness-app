@@ -45,11 +45,5 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: any) => {
-  return {
-    removeWorkout: (workout: any) =>
-      dispatch({ type: 'workoutList/removeWorkout', payload: workout }),
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);
