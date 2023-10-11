@@ -39,10 +39,6 @@ function Home(props: any) {
           />
           </div>
         ))}
-
-        <Link to='/addWorkout'>
-          <button>New Workout</button>
-        </Link>
       </div>
     </div>
   );
