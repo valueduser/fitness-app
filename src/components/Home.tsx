@@ -10,11 +10,6 @@ function WorkoutComponent(props: any) {
       {props.workout.name}
       {/* TODO: display required equipment (if any) and rough estimate of time*/}
       <div>
-        <Link to={`/editWorkout/${props.workout.id}`}>
-          {/* TODO: editWorkout page pass the workout and modify and return */}
-          <button>Edit</button>
-        </Link>
-        <button onClick={() => props.remove(props.workout)}>Delete</button>
         <Link to={`/doWorkout/${props.workout.id}`}>
           <button>Start</button>
         </Link>
