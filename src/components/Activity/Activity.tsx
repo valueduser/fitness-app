@@ -1,11 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Timer from './Timer';
-import Counter from './Counter';
+import Timer from '../Timer';
+import Counter from '../Counter';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { Activity } from '../types/Activity';
-import supabaseClient from '../supabaseClient';
+import { Activity } from '../../types/Activity';
+import supabaseClient from '../../supabaseClient';
 
 function DoActivity(props: any) {
   const { workoutId, activityId } = useParams();
@@ -17,7 +17,7 @@ function DoActivity(props: any) {
   const activityIndex = workout.activity_ids.indexOf(Number(activityId));
 
   function getNextActivity(props: any): Activity {
-    return props.activities.find((a: any) => a.id === Number(workout.activity_ids[activityIndex + 1]))
+    return props.activities.find((a: any) => a.id === Number(workout.activities[activityIndex + 1]))
   }
 
   function getNextActivityName(props: any): string {
@@ -28,7 +28,7 @@ function DoActivity(props: any) {
   function getNextActivityUrl(props: any): string {
     const nextActivity = getNextActivity(props)
     const url: string = nextActivity ? `/doActivity/${Number(workoutId)}/${
-      workout.activity_ids[activityIndex + 1]
+      workout.activities[activityIndex + 1]
     }` : `/fitness-app`
     return url
   }
@@ -86,7 +86,7 @@ function DoActivity(props: any) {
   return (
     <div>
       <div className='current-activity'>
-        <h4>{activity.name}</h4>
+        <h4>{activity.name}(New)</h4>
         <RenderTimerOrCounter activity={activity}></RenderTimerOrCounter>
         <h4>Equipment: {activity.equipment?.length > 0 ? activity.equipment : 'none'}</h4>
         <h4>Notes: {activity.notes}</h4>

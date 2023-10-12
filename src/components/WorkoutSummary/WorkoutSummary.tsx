@@ -2,11 +2,11 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import '../App.css';
-import { Workout } from '../types/Workout';
-import { Activity } from '../types/Activity';
+import '../../App.css';
+import { Workout } from '../../types/Workout';
+import { Activity } from '../../types/Activity';
 
-function DoWorkout(props: any) {
+function WorkoutSummary(props: any) {
   const { workoutId } = useParams();
   const workout = props.workouts.find((w: Workout) => w.id === Number(workoutId));
 
@@ -24,7 +24,7 @@ function DoWorkout(props: any) {
 
   return (
     <div>
-      <h1>Do {workout.name}!</h1>
+      <h1>Do {workout.name} (WorkoutSummary)!</h1>
       <p id='workoutNotes'>
         <span id='workoutNoteLabel'>Notes: </span>
         {!!workout.notes ? workout.notes : 'none'}
@@ -33,7 +33,7 @@ function DoWorkout(props: any) {
         <span id='workoutEquipmentLabel'>Equipment needed: </span>
         { compileWorkoutEquipment(workout.activity_ids).join(', ') }
       </p>
-      <Link to={`/doActivity/${workout.id}/${workout.activity_ids[0]}`}>
+      <Link to={`/activity/${workout.id}/${workout.activity_ids[0]}`}>
         <button>Start</button>
       </Link>
     </div>
@@ -47,4 +47,4 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-export default connect(mapStateToProps)(DoWorkout);
+export default connect(mapStateToProps)(WorkoutSummary);

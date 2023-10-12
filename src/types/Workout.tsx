@@ -1,6 +1,9 @@
+import { Activity } from "./Activity";
+
 export type Workout = {
   id: number,
   name: string, 
-  activities: number[],
+  activity_ids: number[],
+  activities: Activity[],
   notes: string | ''
 };
