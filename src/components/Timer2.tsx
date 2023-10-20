@@ -38,6 +38,8 @@ function Timer2(props: any) {
 
   // const onComplete = countdownCompleteChimeSound.play()
 
+  // TODO: on init, set the remaining time to the initialDuration
+
   return showCountdownTimer() && (
     <div>
 
@@ -45,7 +47,7 @@ function Timer2(props: any) {
         isPlaying={isPlaying}
         duration={count}
         isSmoothColorTransition={true }
-        // updateInterval={1}
+        size={100}
         colors={['#004777', '#F7B801', '#A30000', '#A30000']}
         colorsTime={[7, 5, 2, 0]}
         onUpdate={(remainingTime) => {
