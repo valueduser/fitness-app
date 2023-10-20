@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Workout } from '../../types/Workout';
 
-function Home2(props: any) {
+function Home(props: any) {
   return (
     <div>
-      <h1>Available Workouts (Home 2)</h1>
+      <h1>Available Workouts</h1>
       <div className='workout-list'>
         {props.workouts.map((workout: Workout) => (
           // <WorkoutSummary {...workout} />
-          <div className='workout'>
+          <div className='workout'
+          key={workout.id}>
           {workout.name}
           {/* TODO: display required equipment (if any) and rough estimate of time*/}
           <div>
@@ -33,4 +34,4 @@ const mapStateToProps = (state: any) => {
 };
 
 
-export default connect(mapStateToProps)(Home2);
+export default connect(mapStateToProps)(Home);

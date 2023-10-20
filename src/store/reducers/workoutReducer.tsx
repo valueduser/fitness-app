@@ -1,18 +1,20 @@
+import { Activity } from "../../types/Activity";
 import { Workout } from "../../types/Workout";
 
 interface Action {
   type: string;
-  payload: Workout[];
+  workouts: Workout[];
+  activities: any
 }
 
 const initialState: Workout[] = [];
 
-const workoutReducer = (state = initialState, action: Action) => {
-  switch (action.type) {
+const workoutReducer = (state = initialState, action: Action) => {  switch (action.type) {
     case 'SET_WORKOUTS':
-      const workouts = action.payload.map((workout) => {
+      let workouts = action.workouts.map((workout) => {
         const activity_ids = (workout as any).activity.map(({ id }: {id: number}) => id);
-        return { ...workout, activity_ids }; // Spread the existing workout and add activities property
+        const activities: Activity[] = action.activities.filter((activity: Activity) => activity_ids.includes(activity.id))
+        return { ...workout, activity_ids, activities };
       });
       return workouts;
       

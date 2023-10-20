@@ -10,11 +10,10 @@ function WorkoutSummary(props: any) {
   const { workoutId } = useParams();
   const workout = props.workouts.find((w: Workout) => w.id === Number(workoutId));
 
-  const compileWorkoutEquipment = (activitiesIds: number[]) => {
-    const uniqueActivities = Array.from(new Set(activitiesIds));
+  const compileWorkoutEquipment = (activities: Activity[]) => {
+    const uniqueActivities = Array.from(new Set(activities));
     const equipment = Array.from(new Set())
-    uniqueActivities.forEach(activityId => {
-      const activity = props.activities.find((a: Activity) => a.id === Number(activityId));
+    uniqueActivities.forEach(activity => {
       if (activity.equipment?.length > 0)
         equipment.push(activity.equipment.toString().trim());   
     });
@@ -31,9 +30,12 @@ function WorkoutSummary(props: any) {
       </p>
       <p id='workoutEquipment'>
         <span id='workoutEquipmentLabel'>Equipment needed: </span>
-        { compileWorkoutEquipment(workout.activity_ids).join(', ') }
+        { compileWorkoutEquipment(workout.activities).join(', ') }
       </p>
-      <Link to={`/activity/${workout.id}/${workout.activity_ids[0]}`}>
+      <p id="firstUp">
+        First up: {workout.activities[0].name}
+      </p>
+      <Link to={`/activity/${workout.id}/${workout.activities[0].id}`}>
         <button>Start</button>
       </Link>
     </div>
@@ -42,8 +44,7 @@ function WorkoutSummary(props: any) {
 
 const mapStateToProps = (state: any) => {
   return {
-    workouts: state.workouts,
-    activities: state.activities,
+    workouts: state.workouts
   };
 };
 
