@@ -26,7 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Set environment variables
       env:
         REACT_APP_SUPABASE_API_KEY: ${{ secrets.REACT_APP_SUPABASE_API_KEY }}
         REACT_APP_SUPABASE_REST: ${{ secrets.REACT_APP_SUPABASE_REST }}
