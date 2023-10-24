@@ -75,7 +75,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "lint": "./node_modules/.bin/eslint",
-    "test": "node scripts/test.js",
+    "test": "node scripts/test.js --passWithNoTests",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
