@@ -14,6 +14,8 @@ process.on('unhandledRejection', err => {
 
 // Ensure environment variables are read.
 require('../config/env');
+console.log(process.env);
+console.log(`Hello ${process.env.REACT_APP_SUPABASE_REST}`)
 
 const jest = require('jest');
 const execSync = require('child_process').execSync;
