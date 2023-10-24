@@ -10,6 +10,15 @@ on:
     branches: [ "main", "v2" ]
 
 jobs:
+  string_length_job:
+      runs-on: ubuntu-latest
+  
+      steps:
+        - name: Calculate String Length
+          run: |
+            my_string="Hello, World"
+            string_length=${#my_string}
+            echo "The length of the string is: $string_length"
   build:
 
     runs-on: ubuntu-latest
@@ -29,7 +38,7 @@ jobs:
       env:
         REACT_APP_SUPABASE_REST: ${{ secrets.REACT_APP_SUPABASE_REST }}
         REACT_APP_SUPABASE_API_KEY: ${{ secrets.REACT_APP_SUPABASE_API_KEY }}
-    - run: echo "REACT_APP_SUPABASE_API_KEY=${{ #secrets.REACT_APP_SUPABASE_API_KEY }}"  
+    - run: echo "REACT_APP_SUPABASE_API_KEY=${{ secrets.REACT_APP_SUPABASE_API_KEY }}"  
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
