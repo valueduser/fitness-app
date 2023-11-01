@@ -9,8 +9,8 @@ import React from 'react';
 
 function Timer2(props: any) {
   console.warn(JSON.stringify(props.initialDuration))
-  const [isPlaying, setIsPlaying] = useState(true)
-  const [count, setCount] = useState(props.initialDuration)
+  const [isPlaying] = useState(true)
+  const [count] = useState(props.initialDuration)
 
   // const countdownBeepSound = new Audio(countdownBeepFile);
   const countdownCompleteChimeSound = new Audio(countdownCompleteChimeFile);

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import React, { useEffect } from 'react';
+import React from 'react';
 // import { useState } from 'react';
 import { Activity } from '../../types/Activity';
 import { Workout } from '../../types/Workout';
