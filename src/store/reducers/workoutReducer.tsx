@@ -23,4 +23,6 @@ const workoutReducer = (state = initialState, action: Action) => {  switch (acti
   }
 };
 
+// TODO: compile unique equipment
+
 export default workoutReducer;

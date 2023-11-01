@@ -1,7 +1,8 @@
 import { useState } from 'react';
 // import countdownBeepFile from '../assets/countdownBeep.mp3';
-import countdownCompleteChimeFile from '../assets/countdownCompleteChime.mp3';
+import countdownCompleteChimeFile from '../../assets/countdownCompleteChime.mp3';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import './Timer.css';
 
 // import ActivityCompleteIndicator from './ActivityCompleteIndicator';
 import React from 'react';
@@ -41,8 +42,7 @@ function Timer2(props: any) {
   // TODO: on init, set the remaining time to the initialDuration
 
   return showCountdownTimer() && (
-    <div>
-
+    <div className="time-wrapper">
       <CountdownCircleTimer
         isPlaying={isPlaying}
         duration={count}

@@ -21,6 +21,18 @@ function WorkoutSummary(props: any) {
     return uniqueEquipment.length > 0 ? uniqueEquipment : [ 'none' ]; 
   }
 
+  const compileWorkoutTime = (activities: Activity[]) => {
+    let totalTime = 0
+    activities.forEach(activity => {
+      if (activity.duration && activity.duration > 0) {
+        console.warn(`activity ${activity.name} has a duration of ${activity.duration} in ${activity.duration_units}`)
+        totalTime += activity.duration_units === "minutes" ? activity.duration : Math.floor(activity.duration / 60)
+      }
+    })
+    console.warn(`total workout time: ${totalTime}`)
+    return totalTime / 60
+  }
+
   return (
     <div>
       <h1>Do {workout.name} (WorkoutSummary)!</h1>
@@ -31,6 +43,10 @@ function WorkoutSummary(props: any) {
       <p id='workoutEquipment'>
         <span id='workoutEquipmentLabel'>Equipment needed: </span>
         { compileWorkoutEquipment(workout.activities).join(', ') }
+      </p>
+      <p id='workoutTime'>
+        <span id='workoutTimeLabel'>Time needed: ~</span>
+        { compileWorkoutTime(workout.activities) }
       </p>
       <p id="firstUp">
         First up: {workout.activities[0].name}

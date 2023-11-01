@@ -13,7 +13,6 @@ function Home(props: any) {
           <div className='workout'
           key={workout.id}>
           {workout.name}
-          {/* TODO: display required equipment (if any) and rough estimate of time*/}
           <div>
             <Link to={`/workoutSummary/${workout.id}`}>
               <button>Start</button>

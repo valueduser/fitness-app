@@ -6,21 +6,17 @@ import { Activity } from '../../types/Activity';
 import { Workout } from '../../types/Workout';
 // import supabaseClient from '../../supabaseClient';
 import { Utils } from '../../common/utils';
-import Timer2 from '../Timer2';
+import Timer2 from '../Timer/Timer2';
 
 function ActivityDetail(props: any) {
 
   const { workoutId, activityId } = useParams();
   // const [imageURL, setImageURL] = useState('');
-  // const [time, setTime] = useState(0);
 
   const workout = props.workouts.find((a: Workout) => a.id === Number(workoutId));
   const activity = workout.activities.find((a: Activity) => a.id === Number(activityId));
   const activityIndex = workout.activity_ids.indexOf(Number(activityId));
-  const initialDuration = activity.duration_units === "seconds" ? activity.duration : activity.duration * 60
-  // if(activity.duration) {
-  //   setTime(activity.duration_units === "seconds" ? activity.duration : activity.duration * 60)
-  // }
+
 
   function getNextActivityName(): string {
     const nextActivity = Utils.getNextActivity(activityIndex, workout)
@@ -35,27 +31,26 @@ function ActivityDetail(props: any) {
     return url
   }
 
+  function Item(activity: Activity) {
+    if (activity.duration) {
+      const initialDuration = activity.duration_units === "seconds" ? activity.duration : activity.duration * 60
+      return <Timer2 initialDuration={initialDuration}/>;
+    }
+    return <div className="counter">you need to figure out counters</div>; // TODO:
+  }
+
   return (
     <div>
       <div className='current-activity'>
-        <h4>{activity.name}(New)</h4>
-        {/* <CountdownCircleTimer
-          isPlaying
-          duration={7}
-          colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-          colorsTime={[7, 5, 2, 0]}
-        >
-          {({ remainingTime }) => remainingTime}
-        </CountdownCircleTimer> */}
-        {/* <RenderTimerOrCounter/> */}
-        <Timer2 initialDuration={initialDuration}/>
-        <h4>Equipment: {activity.equipment?.length > 0 ? activity.equipment : 'none'}</h4>
-        <h4>Notes: {activity.notes}</h4>
+        <h4>{activity.name}</h4>
+        <Item {...activity}/>
+        <h5>Equipment: {activity.equipment?.length > 0 ? activity.equipment : 'none'}</h5>
+        <h5>Notes: {activity.notes}</h5>
       </div>
       <div className='next-activity'>
-        <h4>Up Next: {
+        <h5>Up Next: {
             getNextActivityName()
-          }</h4>
+          }</h5>
           <Link to={getNextActivityUrl()}>
           <button>Next</button>
         </Link>
