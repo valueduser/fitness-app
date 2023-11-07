@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/fitness-app/static/css/main.6557d44e.css",
-    "main.js": "/fitness-app/static/js/main.1ac67d3f.js",
+    "main.css": "/fitness-app/static/css/main.bbaac0b1.css",
+    "main.js": "/fitness-app/static/js/main.7aa7ddce.js",
     "static/js/787.7600bb82.chunk.js": "/fitness-app/static/js/787.7600bb82.chunk.js",
     "static/media/countdownCompleteChime.mp3": "/fitness-app/static/media/countdownCompleteChime.57d5e0040aae16835bc7.mp3",
-    "static/media/countdownBeep.mp3": "/fitness-app/static/media/countdownBeep.250aa10d630dbb27ddbf.mp3",
     "index.html": "/fitness-app/index.html",
-    "main.6557d44e.css.map": "/fitness-app/static/css/main.6557d44e.css.map",
-    "main.1ac67d3f.js.map": "/fitness-app/static/js/main.1ac67d3f.js.map",
+    "main.bbaac0b1.css.map": "/fitness-app/static/css/main.bbaac0b1.css.map",
+    "main.7aa7ddce.js.map": "/fitness-app/static/js/main.7aa7ddce.js.map",
     "787.7600bb82.chunk.js.map": "/fitness-app/static/js/787.7600bb82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6557d44e.css",
-    "static/js/main.1ac67d3f.js"
+    "static/css/main.bbaac0b1.css",
+    "static/js/main.7aa7ddce.js"
   ]
 }
