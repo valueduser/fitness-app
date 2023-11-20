@@ -4,17 +4,27 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store/index';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, createRoutesFromChildren, matchRoutes, useLocation, useNavigationType } from 'react-router-dom';
 import * as Sentry from '@sentry/react';
-import { Integrations } from '@sentry/tracing';
 import { createRoot } from 'react-dom/client';
 
 Sentry.init({
   dsn: 'https://53762b96badf4af5a85b494332e73aa3@o141824.ingest.sentry.io/5614947',
   integrations: [
-    new Integrations.BrowserTracing(),
+    new Sentry.BrowserTracing({
+      routingInstrumentation: Sentry.reactRouterV6Instrumentation(
+        React.useEffect,
+        useLocation,
+        useNavigationType,
+        createRoutesFromChildren,
+        matchRoutes
+      )
+    }),
+    new Sentry.Replay()
   ],
   tracesSampleRate: 1.0,
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1.0
 });
 
 const container = document.getElementById('root');

@@ -7,7 +7,7 @@
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@sentry/react": "^7.81.0",
-    "@sentry/tracing": "^7.60.1",
+    "@sentry/tracing": "^7.81.0",
     "@supabase/supabase-js": "^2.32.0",
     "@svgr/webpack": "^8.0.1",
     "@testing-library/jest-dom": "^5.17.0",
