@@ -16,7 +16,7 @@
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.6",
     "@types/react": "^18.2.18",
-    "@types/react-dom": "^18.2.7",
+    "@types/react-dom": "^18.2.18",
     "babel-jest": "^27.4.2",
     "babel-plugin-named-asset-import": "^0.3.8",
     "babel-preset-react-app": "^10.0.1",
