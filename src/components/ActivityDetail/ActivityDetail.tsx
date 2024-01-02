@@ -1,30 +1,27 @@
 import { useParams, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import React from 'react';
-// import { useState } from 'react';
 import { Activity } from '../../types/Activity';
 import { Workout } from '../../types/Workout';
-// import supabaseClient from '../../supabaseClient';
 import { Utils } from '../../common/utils';
 import Timer2 from '../Timer/Timer2';
 
 function ActivityDetail(props: any) {
 
   const { workoutId, activityId } = useParams();
-  // const [imageURL, setImageURL] = useState('');
 
-  const workout = props.workouts.find((a: Workout) => a.id === Number(workoutId));
+  const workout = props.workouts.find((w: Workout) => w.id === Number(workoutId))
   const activity = workout.activities.find((a: Activity) => a.id === Number(activityId));
-  const activityIndex = workout.activity_ids.indexOf(Number(activityId));
+  const activityIndex = workout.activities.findIndex((a: Activity) => a.id === Number(activityId));
+  const nextActivity = Utils.getNextActivity(activityIndex, workout)
 
 
   function getNextActivityName(): string {
-    const nextActivity = Utils.getNextActivity(activityIndex, workout)
+    // console.warn(`Current activity is ${activity?.name} id:(${activity?.id} index: ${activityIndex}). Next activity is ${nextActivity?.name} id:(${nextActivity?.id}).`)
     return nextActivity ? nextActivity.name: 'Finished!'
   }
 
   function getNextActivityUrl(): string {
-    const nextActivity = Utils.getNextActivity(activityIndex, workout)
     const url: string = nextActivity ? `/activity/${Number(workoutId)}/${
       nextActivity.id
     }` : `/fitness-app`

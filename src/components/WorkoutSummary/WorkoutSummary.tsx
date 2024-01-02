@@ -11,26 +11,38 @@ function WorkoutSummary(props: any) {
   const workout = props.workouts.find((w: Workout) => w.id === Number(workoutId));
 
   const compileWorkoutEquipment = (activities: Activity[]) => {
-    const uniqueActivities = Array.from(new Set(activities));
-    const equipment = Array.from(new Set())
-    uniqueActivities.forEach(activity => {
-      if (activity.equipment?.length > 0)
-        equipment.push(activity.equipment.toString().trim());   
-    });
-    const uniqueEquipment = Array.from(new Set(equipment));
-    return uniqueEquipment.length > 0 ? uniqueEquipment : [ 'none' ]; 
+    const uniqueEquipment: string[] = Array.from(
+      new Set(
+        activities.reduce((accumulator: string[], activity: Activity) => {
+          console.warn(activity.equipment)
+          if(activity.equipment) {
+            accumulator.push(...activity.equipment);
+          }
+          return accumulator;
+        }, [])
+      )
+    );
+    return uniqueEquipment.length > 0 ? uniqueEquipment : [ 'none' ];
   }
 
   const compileWorkoutTime = (activities: Activity[]) => {
     let totalTime = 0
     activities.forEach(activity => {
       if (activity.duration && activity.duration > 0) {
-        console.warn(`activity ${activity.name} has a duration of ${activity.duration} in ${activity.duration_units}`)
-        totalTime += activity.duration_units === "minutes" ? activity.duration : Math.floor(activity.duration / 60)
+        switch(activity.duration_units) {
+          case "minutes":
+            totalTime += activity.duration
+          break;
+          case "seconds":
+            totalTime += Math.round(activity.duration / 60)
+          break;
+          case "hours": 
+            totalTime += Math.round(activity.duration * 60)
+          break;
+        }
       }
     })
-    console.warn(`total workout time: ${totalTime}`)
-    return totalTime / 60
+    return totalTime
   }
 
   return (
@@ -46,7 +58,7 @@ function WorkoutSummary(props: any) {
       </p>
       <p id='workoutTime'>
         <span id='workoutTimeLabel'>Time needed: ~</span>
-        { compileWorkoutTime(workout.activities) }
+        { compileWorkoutTime(workout.activities) } minutes
       </p>
       <p id="firstUp">
         First up: {workout.activities[0].name}

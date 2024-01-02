@@ -9,7 +9,7 @@ const allReducers = combineReducers({
 });
 
 async function fetchActivities() {
-  const { data, error } = await supabaseClient.from("activity").select();
+  const { data, error } = await supabaseClient.from("activity").select().order('id');
   if (error) {
     console.error('Error fetching activities:', error);
     return [];
@@ -26,7 +26,7 @@ async function fetchWorkoutsWithActivities() {
       activity (
         id
       ) as activity_ids
-  `).order('id', { foreignTable: 'activity'});
+  `)//.order('id', { foreignTable: 'activity'});
   if (error) {
     console.error('Error fetching workouts:', error);
     return [];

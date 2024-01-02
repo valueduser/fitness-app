@@ -3,10 +3,11 @@ import { Workout } from "../types/Workout";
 
 export class Utils {
   static getNextActivity(activityIndex: number, workout: Workout): Activity | null {
-    const nextId = workout.activity_ids[activityIndex + 1]
-    // console.warn(`Next id is ${nextId})`)
-    const nextActivity = workout.activities.find((a: Activity) => a.id === nextId)
-    // console.warn(`Next activty is ${nextActivity?.name} (${nextActivity?.id})`)
-    return nextActivity ? nextActivity : null
+    if (activityIndex >= 0) {
+      const nextActivity = workout.activities[activityIndex + 1]
+      // console.warn(`Next activty is ${nextActivity?.name} id:(${nextActivity?.id} index: ${activityIndex + 1})`)
+      return nextActivity ? nextActivity : null
+    }
+    return null;
   }
 }

@@ -14,7 +14,7 @@ const workoutReducer = (state = initialState, action: Action) => {  switch (acti
       let workouts = action.workouts.map((workout) => {
         const activity_ids = (workout as any).activity.map(({ id }: {id: number}) => id);
         const activities: Activity[] = action.activities.filter((activity: Activity) => activity_ids.includes(activity.id))
-        return { ...workout, activity_ids, activities };
+        return { ...workout, activities };
       });
       return workouts;
       
@@ -22,7 +22,5 @@ const workoutReducer = (state = initialState, action: Action) => {  switch (acti
       return state;
   }
 };
-
-// TODO: compile unique equipment
 
 export default workoutReducer;
