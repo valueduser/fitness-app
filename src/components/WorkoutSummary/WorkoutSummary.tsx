@@ -32,17 +32,23 @@ function WorkoutSummary(props: any) {
         switch(activity.duration_units) {
           case "minutes":
             totalTime += activity.duration
-          break;
+          break
           case "seconds":
-            totalTime += Math.round(activity.duration / 60)
-          break;
+            totalTime += activity.duration / 60
+          break
           case "hours": 
-            totalTime += Math.round(activity.duration * 60)
-          break;
+            totalTime += activity.duration * 60
+          break
+          default:
+          console.warn(`Unsupported duration unit: ${activity.duration_units}`)
+          break
         }
+      } else {
+        // Assume each effort takes one second
+        totalTime += activity.sets!! * activity.reps!!
       }
     })
-    return totalTime
+    return Math.round(totalTime)
   }
 
   return (
