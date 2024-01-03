@@ -4,7 +4,7 @@ import React from 'react';
 import { Activity } from '../../types/Activity';
 import { Workout } from '../../types/Workout';
 import { Utils } from '../../common/utils';
-import Timer2 from '../Timer/Timer2';
+import Timer from '../Timer/Timer';
 
 function ActivityDetail(props: any) {
 
@@ -31,7 +31,7 @@ function ActivityDetail(props: any) {
   function Item(activity: Activity) {
     if (activity.duration) {
       const initialDuration = activity.duration_units === "seconds" ? activity.duration : activity.duration * 60
-      return <Timer2 initialDuration={initialDuration}/>;
+      return <Timer initialDuration={initialDuration}/>;
     }
     return <div className="counter">you need to figure out counters</div>; // TODO:
   }

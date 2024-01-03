@@ -11,8 +11,8 @@ function Home(props: any) {
         {props.workouts.map((workout: Workout) => (
           // <WorkoutSummary {...workout} />
           <div className='workout'
-          key={workout.id}>
-          {workout.name}
+            key={workout.id}>
+            {workout.name}
           <div>
             <Link to={`/workoutSummary/${workout.id}`}>
               <button>Start</button>

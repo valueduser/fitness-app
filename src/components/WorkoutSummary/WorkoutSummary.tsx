@@ -44,7 +44,7 @@ function WorkoutSummary(props: any) {
           break
         }
       } else {
-        // Assume each effort takes one second
+        // Assume each effort without a specific time takes one second
         totalTime += activity.sets!! * activity.reps!! / 60
       }
     })
