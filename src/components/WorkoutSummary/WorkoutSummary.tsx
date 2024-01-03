@@ -45,7 +45,7 @@ function WorkoutSummary(props: any) {
         }
       } else {
         // Assume each effort takes one second
-        totalTime += activity.sets!! * activity.reps!!
+        totalTime += activity.sets!! * activity.reps!! / 60
       }
     })
     return Math.round(totalTime)
@@ -53,7 +53,7 @@ function WorkoutSummary(props: any) {
 
   return (
     <div>
-      <h1>Do {workout.name} (WorkoutSummary)!</h1>
+      <h1>{workout.name}</h1>
       <p id='workoutNotes'>
         <span id='workoutNoteLabel'>Notes: </span>
         {!!workout.notes ? workout.notes : 'none'}
