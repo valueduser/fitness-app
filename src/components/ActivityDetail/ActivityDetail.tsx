@@ -29,6 +29,7 @@ function ActivityDetail(props: any) {
   }
 
   function Item(activity: Activity) {
+    // TODO: handle activity.isBilateral
     if (activity.duration) {
       const initialDuration = activity.duration_units === "seconds" ? activity.duration : activity.duration * 60
       return <Timer initialDuration={initialDuration}/>;
