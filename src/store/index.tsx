@@ -1,17 +1,15 @@
 import { createStore, combineReducers } from "redux";
 import workoutReducer from "./reducers/workoutReducer";
-import activityReducer from "./reducers/activityReducer";
 import { devToolsEnhancer } from "redux-devtools-extension";
 import supabaseClient from "../supabaseClient";
 
-//Combine our reducers and change property names
+// Combine our reducers and change property names
 const allReducers = combineReducers({
-  workouts: workoutReducer,
-  activities: activityReducer,
+  workouts: workoutReducer
 });
 
 async function fetchActivities() {
-  const { data, error } = await supabaseClient.from("activity").select();
+  const { data, error } = await supabaseClient.from("activity").select().order('id');
   if (error) {
     console.error('Error fetching activities:', error);
     return [];
@@ -27,8 +25,8 @@ async function fetchWorkoutsWithActivities() {
       notes,
       activity (
         id
-      ) as activities
-  `).order('id', { foreignTable: 'activity'});
+      ) as activity_ids
+  `)//.order('id', { foreignTable: 'activity'});
   if (error) {
     console.error('Error fetching workouts:', error);
     return [];
@@ -38,20 +36,16 @@ async function fetchWorkoutsWithActivities() {
 
 const store = createStore(allReducers, devToolsEnhancer({}));
 
-// Fetch activities and update store
-fetchActivities().then((data) => {
-  store.dispatch({
-    type: 'SET_ACTIVITIES',
-    payload: data,
+
+fetchActivities().then((activityData) => {
+  fetchWorkoutsWithActivities().then((data) => {
+    store.dispatch({
+      type: 'SET_WORKOUTS',
+      workouts: data,
+      activities: activityData
+    });
   });
 });
 
-// Fetch workouts and update store
-fetchWorkoutsWithActivities().then((data) => {
-  store.dispatch({
-    type: 'SET_WORKOUTS',
-    payload: data,
-  });
-});
 
 export default store;
