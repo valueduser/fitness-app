@@ -55,7 +55,8 @@ describe('getNextActivity', () => {
         instructions: 'just do your best'
       },
     ],
-    notes: 'not available'
+    notes: 'not available',
+    isActive: true
   }
 
   it('gets the next activity', () =>  {

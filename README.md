@@ -6,7 +6,6 @@
 * Standardize the gif sizes and qualities
 * Rest activities
 * Timed activity sets (e.g. do as many of this set of activities as possible in 20 minutes)
-* IsActive on Workouts & Activities
 * Add back images and figure out how to get them to load faster
 
 ## Available Scripts
