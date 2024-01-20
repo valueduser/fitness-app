@@ -20,7 +20,7 @@ describe('getNextActivity', () => {
         duration: 0,
         duration_units: 'seconds',
         notes: 'no notes',
-        instructions: 'just do your best'
+        instructions: 'just do your best',
       },
       {
         id: 1,
@@ -36,7 +36,7 @@ describe('getNextActivity', () => {
         duration: 0,
         duration_units: 'seconds',
         notes: 'no notes',
-        instructions: 'just do your best'
+        instructions: 'just do your best',
       },
       {
         id: 42,
@@ -52,11 +52,10 @@ describe('getNextActivity', () => {
         duration: 0,
         duration_units: 'seconds',
         notes: 'no notes',
-        instructions: 'just do your best'
+        instructions: 'just do your best',
       },
     ],
     notes: 'not available',
-    isActive: true
   }
 
   it('gets the next activity', () =>  {

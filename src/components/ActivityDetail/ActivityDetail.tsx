@@ -18,7 +18,6 @@ function ActivityDetail(props: any) {
 
 
   function getNextActivityName(): string {
-    // console.warn(`Current activity is ${activity?.name} id:(${activity?.id} index: ${activityIndex}). Next activity is ${nextActivity?.name} id:(${nextActivity?.id}).`)
     return nextActivity ? nextActivity.name: 'Finished!'
   }
 
@@ -44,8 +43,14 @@ function ActivityDetail(props: any) {
     )
   }
 
+  const ShowBilateralToggle: React.FC = () => {
+    if (!activity.isBilateral) {
+      return null
+    }
+    return <BiLateralToggle/>
+  }
+
   function Item(activity: Activity) {
-    // TODO: handle activity.isBilateral
     if (activity.duration) {
       const initialDuration = activity.duration_units === "seconds" ? activity.duration : activity.duration * 60
       return <Timer initialDuration={initialDuration}/>
@@ -58,7 +63,7 @@ function ActivityDetail(props: any) {
       <div className='current-activity'>
         <h4>{activity.name}</h4>
         <Item {...activity}/>
-        <BiLateralToggle/>
+        <ShowBilateralToggle/>
         <Equipment/>
         <Notes/>
       </div>

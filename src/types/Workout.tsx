@@ -5,5 +5,4 @@ export type Workout = {
   name: string, 
   activities: Activity[],
   notes: string | '',
-  isActive: boolean | true
 };
