@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.16.0",
+    "@babel/core": "^7.23.9",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@sentry/react": "^7.81.0",
     "@sentry/tracing": "^7.81.0",
