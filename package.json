@@ -6,7 +6,7 @@
   "dependencies": {
     "@babel/core": "^7.23.9",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
-    "@sentry/react": "^7.81.0",
+    "@sentry/react": "^8.33.1",
     "@sentry/tracing": "^7.81.0",
     "@supabase/supabase-js": "^2.32.0",
     "@svgr/webpack": "^8.0.1",
